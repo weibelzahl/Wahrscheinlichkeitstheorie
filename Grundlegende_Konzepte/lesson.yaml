@@ -1,0 +1,166 @@
+- Class: meta
+  Course: Wahrscheinlichkeitstheorie
+  Lesson: Grundlegende Konzepte
+  Author: PFH
+  Type: Standard
+  Organization: PFH Private Hochschule Göttingen
+  Version: 0.1
+  
+  
+# Begrüßung  
+- Class: text
+  Output: "Dieser Kurs ist Teil der Studiengaenge in Psychologie und Wirtschaftspsychologie an der PFH Private Hochschule Goettingen. In diesem Kapitel lernen Sie einige grundlegende Konzepte der Wahrscheinlichkeitsrechnung kennen."
+
+- Class: text
+  Output: "Als erstes beschaeftigen wir uns mit den Begriffen Zufallsvorgang, Ergebnis und Ereignis."
+
+- Class: text
+  Output: "Ein Zufallsvorgang ist ein Vorgang, dessen moegliche Resultate im Voraus festliegen, wobei jedoch ungewiss ist, welches Resultat bei der Durchfuehrung im Einzelnen eintreten wird (Holling & Gediga, 2013)."
+  
+- Class: text
+  Output: "Ein typisches Beispiel ist das Werfen eines Wuerfels."
+
+- Class: cmd_question
+  Output: "Wie viele moegliche Resultate koennen beim Werfen eines Wuerfels auftreten?"
+  CorrectAnswer: 6
+  AnswerTests: any_of_exprs('6', 'sechs')
+  Hint: "Wie viele Seiten hat ein Wuerfel? So viele moegliche Resultate gibt es. Tippen Sie einfach die entsprechende Zahl ein."
+
+- Class: text
+  Output: "Die moeglichen Resultate des Zufallvorgangs nennt man auch Ergebnisse. Entsprechend nennt man die Menge aller moeglichen Ergebnisse auch Ergebnisraum."
+
+- Class: mult_question
+  Output: "Wie lautet der Ergebnisraum beim Werfen eines Wuerfels?"
+  AnswerChoices:  1, 2, 3, 4, 5, 6; Kopf, Zahl; leere Menge
+  CorrectAnswer:  1, 2, 3, 4, 5, 6
+  AnswerTests: omnitest(correctVal='1, 2, 3, 4, 5, 6')
+  Hint: "Der Ergebnisraum beinhaltet alle sechs moeglichen Ergebnisse eines Wurfes."
+
+- Class: text
+  Output: "Richtig, die Groesse des Ergebnisraumes beim Werfen eines Wuerfels ist also 6."
+  
+- Class: cmd_question
+  Output: "Wie gross ist der Ergebnisraum, wenn der Wuerfel zwei mal geworfen wird?"
+  CorrectAnswer: 36
+  AnswerTests: any_of_exprs('36', 'sechsunddreissig', '6*6')
+  Hint: "Zu den moeglichen Ergebnissen zaehlen z.B. '1-1' oder '5-2'. Wie viele Kombinationen gibt es insgesamt?"
+  
+- Class: text
+  Output: "Wir kennen nun die moeglichen Ergebnisse. Das Ergebnis einer einzelnen Durchfuehrung des Zufallsvorgangs ist jedoch ungewiss. Das gilt auch beim Wuerfeln."
+
+- Class: mult_question
+  Output: "Sie haben fuenf Mal gewuerfelt. Es sind nacheinander die Zahlen 6, 5, 4, 3 und 2 gefallen. Was wird beim naechsten Wurf passieren?" 
+  AnswerChoices:  Es faellt die Zahl 1; Alle sechs Zahlen sind gleich wahrscheinlich; Es koennen alle sechs Zahlen fallen, aber die Zahl 1 faellt mit der groessten Wahrscheinlichkeit 
+  CorrectAnswer:   Alle sechs Zahlen sind gleich wahrscheinlich
+  AnswerTests: omnitest(correctVal='Alle sechs Zahlen sind gleich wahrscheinlich')
+  Hint: "Das Ergebnis eines Zufallsvorgangs ist ungewiss. Alle sechs Zahlen sind gleich wahrscheinlich."
+  
+- Class: text
+  Output: "Alle sechs Ergebnisse sind beim Wuerfeln gleich wahrscheinlich. Es spielt keine Rolle was vorher geschehen ist. Die Wahrscheinlichkeit bleibt immer gleich. Die Ergebnisse sind unabhaengig."
+
+- Class: text
+  Output: "Teilmengen von Ergebnissen koennen nun zu Ereignissen zusammengefasst werden."
+
+# Ereignis  
+- Class: mult_question
+  Output: 'Ist die Menge aller ungeraden Zahlen beim Wuerfeln, also {1, 3, 5} ein Ereignis?' 
+  AnswerChoices: Ja;Nein 
+  CorrectAnswer: Ja
+  AnswerTests: omnitest(correctVal='Ja')
+  Hint: "Ja, es handelt sich um eine Teilmenge der moeglichen Ergebnisse."
+
+# Elementarereignis  
+- Class: mult_question
+  Output: 'Ist die Zahl 2 beim Wuerfeln ein Ereignis?' 
+  AnswerChoices: Ja;Nein 
+  CorrectAnswer: Ja
+  AnswerTests: omnitest(correctVal='Ja')
+  Hint: "Ja, es handelt sich um eine Teilmenge der moeglichen Ergebnisse. Teilmengen koennen auch die Groesse 1 haben. In diesem Fall ist das Ergebnis auch ein Ereignis."
+
+- Class: text
+  Output: "Wenn das Ereignis genau ein Ergebnis umfasst, spricht man auch von einem Elementarereigns."
+
+# sicheres Ereignis  
+- Class: mult_question
+  Output: 'Ist die Menge der Zahlen von 1 bis 6, also {1, 2, 3, 4, 5, 6}, beim Wuerfeln ein Ereignis?' 
+  AnswerChoices: Ja;Nein 
+  CorrectAnswer: Ja
+  AnswerTests: omnitest(correctVal='Ja')
+  Hint: "Ja, es handelt sich um eine Teilmenge der moeglichen Ergebnisse. Die Teilmenge umfasst hier alle moeglichen Ergebnisse."
+
+- Class: text
+  Output: "Wenn das Ereignis, wie in diesem Fall alle Ergebnisse umfasst, spricht man auch von einem sicheren Ereignis, weil es auf jeden Fall eintreffen wird."
+
+# leere Menge, unmoegliches Ereignis 
+- Class: mult_question
+  Output: 'Ist die leere Menge, also {}, beim Wuerfeln ein Ereignis?' 
+  AnswerChoices: Ja;Nein 
+  CorrectAnswer: Ja
+  AnswerTests: omnitest(correctVal='Ja')
+  Hint: "Ja, auch hier handelt sich um eine Teilmenge der moeglichen Ergebnisse, auch wenn die Menge keine Elemente hat."
+
+- Class: text
+  Output: "Wenn das Ereignis eine leere Menge ist, spricht man von einem unmoeglichen Ereignis."
+ 
+# Zusammenfassung von Ereignisse 
+- Class: mult_question
+  Output: 'Welcher der folgenden Begriffe ist KEIN stochastischer Fachbegriff?' 
+  AnswerChoices: sicheres Ereignis;unmoegliches Ereignis;Ergebnis;Wahrscheinlichkeit;Episode  
+  CorrectAnswer: Episode
+  AnswerTests: omnitest(correctVal='Episode')
+  Hint: "Alle richtigen Fachbegriffe wurden oben genannt. Finden Sie heraus, welcher nicht genant wurde."
+
+- Class: text
+  Output: "Es gibt verschiedene Auffassungen davon, was der Begriff Wahrscheinlichkeit bedeutet. Wir halten uns hier an die klassische Auffassung, die sogenannte Laplace-Wahrscheinlichkeit."
+
+- Class: text
+  Output: "Nach Pierre-Simon Laplace berechnet sich die Wahrscheinlichkeit eines Ereignisses aus dem Verhaeltnis der Anzahl guenstiger Ergebnisse zur Anzahl moeglicher Ergebnisse."
+  
+- Class: text
+  Output: "Formal laesst sich das schreiben als: P(Ereignis) = (Anzahl guenstiger Ergebnisse) / (Anzahl moeglicher Ergebnisse). Das P steht fuer probabilitas (lat.) bzw. probability (engl.) und wird regelmaessig fuer die Notation von Wahrscheinlichkeiten verwendet."
+
+- Class: cmd_question
+  Output: "Wie viele guenstige Ergebnisse gibt es fuer das Ereignis 'eine gerade Zahl' beim Werfen eines Wuerfels?"
+  CorrectAnswer: 3
+  AnswerTests: any_of_exprs('3', 'drei')
+  Hint: "Wie viele gerade Zahlen gibt es auf einem Wuerfel?"
+
+- Class: cmd_question
+  Output: "Wie viele moegliche Ergebnisse gibt es fuer das Ereignis 'eine gerade Zahl' beim Werfen eines Wuerfels (das hatten wir schon)?"
+  CorrectAnswer: 6
+  AnswerTests: any_of_exprs('6', 'sechs')
+  Hint: "Mit anderen Worten: Wie gross ist der Ergebnisraum beim einmaligen Werfen eines Wuerfels?"
+
+- Class: mult_question
+  Output: 'Damit koennen wir nun die Wahrscheinlichkeit des Ereignisses ausrechnen. Wie hoch ist P(eine gerade Zahl) beim einmaligen Werfen eines Wuerfels?' 
+  AnswerChoices: 1/6;6/1;1;6  
+  CorrectAnswer: 1/6
+  AnswerTests: omnitest(correctVal='1/6')
+  Hint: "P(Ereignis) = (Anzahl guenstiger Ergebnisse) / (Anzahl moeglicher Ergebnisse). Die Anzahl guenstiger Ergebnisse betraegt 1. Die Anzahl moeglicher Ergebnisse betraegt 6."
+
+- Class: mult_question
+  Output: 'Wie hoch ist die Wahrscheinlichkeit beim zweimaligen Werfen eines Wuerfels erst die Zahl 1 und dann die Zahl 2 zu erhalten? Ueberlegen Sie wiederum, wie viele guenstige und wie viele moegliche Ergebnisse es gibt.' 
+  AnswerChoices: 1/36;36/1;1;36;1/2;2/1  
+  CorrectAnswer: 1/36
+  AnswerTests: omnitest(correctVal='1/36')
+  Hint: "P(Ereignis) = (Anzahl guenstiger Ergebnisse) / (Anzahl moeglicher Ergebnisse). Die Anzahl guenstiger Ergebnisse betraegt 1. Die Anzahl moeglicher Ergebnisse betraegt 36."
+
+- Class: mult_question
+  Output: 'Okay, jetzt wird es etwas schwieriger. Wie hoch ist die Wahrscheinlichkeit beim zweimaligen Werfen die Augensumme 2 zu erhalten? Ueberlegen Sie wiederum, wie viele guenstige und wie viele moegliche Ergebnisse es gibt.' 
+  AnswerChoices: 1/36;36/1;1;36;1/2;2/1  
+  CorrectAnswer: 1/36
+  AnswerTests: omnitest(correctVal='1/36')
+  Hint: "P(Ereignis) = (Anzahl guenstiger Ergebnisse) / (Anzahl moeglicher Ergebnisse). Die Augensumme 2 kann nur bei einem einzigen Ergebnis entstehen, nämlich 1-1. Die Anzahl guenstiger Ergebnisse betraegt also 1. Die Anzahl moeglicher Ergebnisse betraegt immer noch 36."
+
+- Class: mult_question
+  Output: 'Wie hoch ist die Wahrscheinlichkeit beim zweimaligen Werfen die Augensumme 3 zu erhalten? Ueberlegen Sie wiederum, wie viele guenstige und wie viele moegliche Ergebnisse es gibt.' 
+  AnswerChoices: 1/18;36/2;2;36;1/2;2/9
+  CorrectAnswer: 1/18
+  AnswerTests: omnitest(correctVal='1/18')
+  Hint: "P(Ereignis) = (Anzahl guenstiger Ergebnisse) / (Anzahl moeglicher Ergebnisse). Die Augensumme 3 kann bei zwei Ergebnissen entstehen, naemlich bei '1-2' und bei '2-1'. Andere Kombinationen gibt es nicht. Die Anzahl guenstiger Ergebnisse betraegt also 2. Die Anzahl moeglicher Ergebnisse betraegt immer noch 36. Achtung, der Bruch laesst sich kuerzen." 
+
+# Zusammenfassung des Kapitels:
+- Class: text
+  Output: "In diesem Kapitel haben Sie einige grundlegende Konzepte der Wahrscheinlichkeitsrechnung kennengelernt: Zufallsvorgang, Ergebnis, Ereignis und Wahrscheinlichkeit. Sie haben dieses Kapitel nun erfolgreich abgeschlossen."
+
+
