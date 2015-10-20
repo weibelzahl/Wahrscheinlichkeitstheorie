@@ -9,7 +9,7 @@
   
 # Begrüßung  
 - Class: text
-  Output: "Dieser Kurs ist Teil der Studiengaenge in Psychologie und Wirtschaftspsychologie an der PFH Private Hochschule Goettingen. In diesem Kapitel lernen Sie einige grundlegende Konzepte der Wahrscheinlichkeitsrechnung kennen."
+  Output: "Dieser Kurs ist Teil der Studiengaenge Psychologie und Wirtschaftspsychologie an der PFH Private Hochschule Goettingen. In diesem Kapitel lernen Sie einige grundlegende Konzepte der Wahrscheinlichkeitsrechnung kennen."
 
 - Class: text
   Output: "Als erstes beschaeftigen wir uns mit den Begriffen Zufallsvorgang, Ergebnis und Ereignis."
@@ -40,7 +40,7 @@
   Output: "Richtig, die Groesse des Ergebnisraumes beim Werfen eines Wuerfels ist also 6."
   
 - Class: cmd_question
-  Output: "Wie gross ist der Ergebnisraum, wenn der Wuerfel zwei mal geworfen wird?"
+  Output: "Wie gross ist der Ergebnisraum, wenn der Wuerfel zweimal geworfen wird?"
   CorrectAnswer: 36
   AnswerTests: any_of_exprs('36', 'sechsunddreissig', '6*6')
   Hint: "Zu den moeglichen Ergebnissen zaehlen z.B. '1-1' oder '5-2'. Wie viele Kombinationen gibt es insgesamt?"
@@ -133,10 +133,10 @@
 
 - Class: mult_question
   Output: 'Damit koennen wir nun die Wahrscheinlichkeit des Ereignisses ausrechnen. Wie hoch ist P(eine gerade Zahl) beim einmaligen Werfen eines Wuerfels?' 
-  AnswerChoices: 1/6;6/1;1;6  
-  CorrectAnswer: 1/6
-  AnswerTests: omnitest(correctVal='1/6')
-  Hint: "P(Ereignis) = (Anzahl guenstiger Ergebnisse) / (Anzahl moeglicher Ergebnisse). Die Anzahl guenstiger Ergebnisse betraegt 1. Die Anzahl moeglicher Ergebnisse betraegt 6."
+  AnswerChoices: 1/6;6/1;1;6;1/2  
+  CorrectAnswer: 1/2
+  AnswerTests: omnitest(correctVal='1/2')
+  Hint: "P(Ereignis) = (Anzahl guenstiger Ergebnisse) / (Anzahl moeglicher Ergebnisse). Die Anzahl guenstiger Ergebnisse betraegt 3. Die Anzahl moeglicher Ergebnisse betraegt 6. Achtung, der Bruch laesst sich kuerzen."
 
 - Class: mult_question
   Output: 'Wie hoch ist die Wahrscheinlichkeit beim zweimaligen Werfen eines Wuerfels erst die Zahl 1 und dann die Zahl 2 zu erhalten? Ueberlegen Sie wiederum, wie viele guenstige und wie viele moegliche Ergebnisse es gibt.' 
