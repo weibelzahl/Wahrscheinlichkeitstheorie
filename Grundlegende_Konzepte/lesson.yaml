@@ -14,6 +14,7 @@
 - Class: text
   Output: "Als erstes beschaeftigen wir uns mit den Begriffen Zufallsvorgang, Ergebnis und Ereignis."
 
+# Zufallsvorgang
 - Class: text
   Output: "Ein Zufallsvorgang ist ein Vorgang, dessen moegliche Resultate im Voraus festliegen, wobei jedoch ungewiss ist, welches Resultat bei der Durchfuehrung im Einzelnen eintreten wird (Holling & Gediga, 2013)."
   
@@ -26,6 +27,7 @@
   AnswerTests: any_of_exprs('6', 'sechs')
   Hint: "Wie viele Seiten hat ein Wuerfel? So viele moegliche Resultate gibt es. Tippen Sie einfach die entsprechende Zahl ein."
 
+# Ergebnisraum
 - Class: text
   Output: "Die moeglichen Resultate des Zufallvorgangs nennt man auch Ergebnisse. Entsprechend nennt man die Menge aller moeglichen Ergebnisse auch Ergebnisraum."
 
@@ -58,6 +60,7 @@
 - Class: text
   Output: "Alle sechs Ergebnisse sind beim Wuerfeln gleich wahrscheinlich. Es spielt keine Rolle was vorher geschehen ist. Die Wahrscheinlichkeit bleibt immer gleich. Die Ergebnisse sind unabhaengig."
 
+# Ereignis
 - Class: text
   Output: "Teilmengen von Ergebnissen koennen nun zu Ereignissen zusammengefasst werden."
 
@@ -110,6 +113,7 @@
   AnswerTests: omnitest(correctVal='Episode')
   Hint: "Alle richtigen Fachbegriffe wurden oben genannt. Finden Sie heraus, welcher nicht genant wurde."
 
+# Laplace-Wahrscheinlichkeit
 - Class: text
   Output: "Es gibt verschiedene Auffassungen davon, was der Begriff Wahrscheinlichkeit bedeutet. Wir halten uns hier an die klassische Auffassung, die sogenannte Laplace-Wahrscheinlichkeit."
 
@@ -162,5 +166,3 @@
 # Zusammenfassung des Kapitels:
 - Class: text
   Output: "In diesem Kapitel haben Sie einige grundlegende Konzepte der Wahrscheinlichkeitsrechnung kennengelernt: Zufallsvorgang, Ergebnis, Ereignis und Wahrscheinlichkeit. Sie haben dieses Kapitel nun erfolgreich abgeschlossen."
-
-

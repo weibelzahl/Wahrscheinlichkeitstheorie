@@ -1,0 +1,189 @@
+- Class: meta
+  Course: Wahrscheinlichkeitstheorie
+  Lesson: Wahrscheinlichkeitsrechnung
+  Author: PFH
+  Type: Standard
+  Organization: PFH Private Hochschule Göttingen
+  Version: 0.1
+  
+# Begrüßung  
+- Class: text
+  Output: "In diesem Kapitel lernen Sie die Wahrscheinlichkeit bestimmter Ereignisse zu berechnen."
+
+- Class: text
+  Output: "Im vorherigen Kapitel hatten wir bereits festgestellt, dass es gar nicht so schwer ist, mit Hilfe der Formel fuer die Laplace-Wahrscheinlichkeit auzurechnen, wie wahrscheinlich ein Ereignis ist, das sich aus mehreren Ergebnissen zusammen setzt."
+
+- Class: mult_question
+  Output: 'Nur zur Wiederholung: Wie hoch ist die Wahrscheinlichkeit beim zweimaligen Werfen eines Wuerfels die Augensumme 3 zu erhalten? Ueberlegen Sie, wie viele guenstige und wie viele moegliche Ergebnisse es gibt.' 
+  AnswerChoices: 1/18;36/2;2;36;1/2;2/9
+  CorrectAnswer: 1/18
+  AnswerTests: omnitest(correctVal='1/18')
+  Hint: "P(Ereignis) = (Anzahl guenstiger Ergebnisse) / (Anzahl moeglicher Ergebnisse). Die Augensumme 3 kann bei zwei Ergebnissen entstehen, naemlich bei '1-2' und bei '2-1'. Andere Kombinationen gibt es nicht. Die Anzahl guenstiger Ergebnisse betraegt also 2. Die Anzahl moeglicher Ergebnisse betraegt immer noch 36. Achtung, der Bruch laesst sich kuerzen." 
+
+- Class: mult_question
+  Output: 'Nun koennen wir auch ausrechnen, wie gross die Wahrscheinlichkeit ist, beim ersten Wurf die Zahl 6 und beim zweiten Wurf die Zahl 3 zu wuerfeln.' 
+  AnswerChoices: 1/18;36/1;2;1/36;1/2;2/9
+  CorrectAnswer: 1/36
+  AnswerTests: omnitest(correctVal='1/36')
+  Hint: "P(Ereignis) = (Anzahl guenstiger Ergebnisse) / (Anzahl moeglicher Ergebnisse). Die Augensumme 3 kann bei zwei Ergebnissen entstehen, naemlich bei '1-2' und bei '2-1'. Andere Kombinationen gibt es nicht. Die Anzahl guenstiger Ergebnisse betraegt also 2. Die Anzahl moeglicher Ergebnisse betraegt immer noch 36. Achtung, der Bruch laesst sich kuerzen." 
+
+- Class: text
+  Output: "Tatsaechlich kann man diese Aufgabe auf mindestens zwei verschiedene Arten loesen. Entweder wir zaehlen die Anzahl der guenstigen und die der moeglichen Ereignisse, wie schon bei der ersten Aufgabe."
+
+- Class: text
+  Output: "Wir koennen aber auch so vorgehen: Die Wahrscheinlichkeit beim ersten Wurf die Zahl 6 zu erhalten ist bekanntlich 1/6. Nur in 1/6 aller Faelle kann es also ueberhaupt noch zu einem guenstigen Ereignis kommen."
+  
+- Class: mult_question
+  Output: 'Wenn nun die Zahl 6 tatsaechlich gefallen ist. Wie gross ist nun die Wahrscheinlichkeit, dass im naechsten Wurf die Zahl 3 faellt?' 
+  AnswerChoices: 1/3;6;1/6;1/2;1/5;1/36
+  CorrectAnswer: 1/6
+  AnswerTests: omnitest(correctVal='1/6')
+  Hint: "Egal was vorher passiert ist, beim Wuerfeln ist jedes Ergebnis gleich wahrscheinlich. Es gibt sechs moegliche Ergebnisse." 
+
+- Class: text
+  Output: "Die Gesamtwahrscheinlichkeit ergibt sich nun durch die Multiplikation der beiden Teilwahrscheinlichkeiten. Das zweite Ereignis (Zahl 3) ist nur in 1/6 aller Faelle von Interesse, naemlich genau dann, wenn vorher die Zahl 6 gefallen ist."
+  
+- Class: cmd_question
+  Output: "Wie gross ist also die Wahrscheinlichkeit, erst die Zahl 6 und dann die Zahl 3 zu wuerfeln?"
+  CorrectAnswer: 1/36
+  AnswerTests: omnitest(correctVal=1/36)
+  Hint: 'Multiplizieren Sie die Teilwahrscheinlichkeiten miteinandern: 1/6 * 1/6'
+
+# Wahrscheinlichkeitsbaum  
+- Class: figure
+  Output: "Das laesst sich am besten in einem Wahrscheinlichkeitsbaum veranschaulichen. In Ihrer Plotanzeige sollte jetzt ein Wahrscheinlichkeitsbaum zu sehen sein."
+  Figure: probabilityTree.R
+  FigureType: new  
+    
+- Class: text
+  Output: "Ausgehend vom Wurzelknoten werden die verschiedenen Ereignisse beim ersten Wurf unterschieden. Zum Beispiel kann beim ersten Wurf die 'Zahl 6' fallen oder es faellt 'nicht die Zahl 6'. An den Zweigen des Wahrscheinlichkeitsbaumes ist jeweils angezeigt, wie wahrscheinlich dieses Ereignis ist."
+
+- Class: cmd_question
+  Output: "Lesen Sie im Baumdiagramm ab, wie gross die Wahrscheinlichkeit ist, dass beim ersten Wurf die Zahl 6 nicht faellt."
+  CorrectAnswer: 5/6
+  AnswerTests: omnitest(correctVal=5/6)
+  Hint: 'Die Wahrscheinlichkeit kann am ersten Zweig, der nach unten fuehrt, abgelesen werden: 5/6'
+  
+- Class: mult_question
+  Output: 'Wie gross ist die Summe der Wahrscheinlichkeiten aller Zweige, die von einem Knoten ausgehen?' 
+  AnswerChoices: 0;1;Anzahl der Zweige;1/2
+  CorrectAnswer: 1
+  AnswerTests: omnitest(correctVal='1')
+  Hint: "Addieren Sie zur Probe die Wahrscheinlichkeiten für den ersten Wurf: 1/6 + 5/6" 
+
+- Class: text
+  Output: "Der grosse Vorteil der Veranschaulichung mit einem Wahrscheinlichkeitsbaum ist: Die verschiedenen Faelle werden klar unterschieden und die Wahrscheinlichkeit von komplizierten Ereignissen kann meist recht leicht abgeleitet werden."
+
+- Class: text
+  Output: "Die Endpunkte des Baumes werden Blaetter genannt. Um zu die Wahrscheinlichkeit des Pfades bis zu einem bestimmten Blatt zu bestimmen, kann man einfach die Wahrscheinlichkeiten der jeweiligen Zweige miteinander multiplizieren. Entsprechend ergibt sich, wie wir bereits gesehen hatten, die Wahrscheinlichkeit von P('6-3') aus dem Pfad P(6 im ersten Wurf) * P(3 im zweiten Wurf) = 1/6 * 1/6 = 1/36. "
+
+- Class: cmd_question
+  Output: "Wie gross ist also die Wahrscheinlichkeit erst die Zahl 6 und dann nicht die Zahl 3 zu wuerfeln? Berechnen Sie das Endergebnis im Kopf oder geben Sie die Berechnungsformel ein (z.B. im Format 1/3 * 1/3)."
+  CorrectAnswer: 5/36
+  AnswerTests: omnitest(correctVal=5/36)
+  Hint: 'Aus dem Pfad im Wahrscheinlichkeitsbaum ergibt sich: 1/6 * 5/6'
+
+- Class: cmd_question
+  Output: "Jetzt koennen Sie auch ausrechnen, wie gross die Wahrscheinlichkeit ist, bei drei Wuerfen nacheinander jedes Mal mindestens die Zahl 5 zu wuerfeln."
+  CorrectAnswer: 1/27
+  AnswerTests: omnitest(correctVal=1/27)
+  Hint: "Zeichnen Sie einen Wahrscheinlichkeitsbaum auf. Fuer den ersten Wurf gilt: P('5 oder 6') = 1/3. Gleiches gilt fuer den zweiten und dritten Wurf: P('5 oder 6') = 1/3. Insgesamt: P('3 mal mindestens 5') = 1/3 * 1/3 * 1/3 = 1/27"
+
+ # bedingte Wahrscheinlichkeit 
+- Class: figure
+  Output: "Als naechstes lernen Sie bedingte Wahrscheinlichkeiten kennen. Dazu wenden wir uns einem anderen Beispiel zu. In Ihrem Arbeitsbereich befindet sich nun ein Datensatz von Studierenden. Der Datensatz heisst entsprechend 'studierende'."
+  Figure: studierende.R
+
+- Class: cmd_question
+  Output: "Zunaechst wollen wir herausfinden, wie viele Studierende in diesem Datensatz verzeichnet sind. Der Befehl fuer die Anzahl der Zeilen lautet nrow(). Tippen Sie also einfach: 'nrow(studierende)'"
+  CorrectAnswer: nrow(studierende)
+  AnswerTests: omnitest(correctExpr='nrow(studierende)')
+  Hint: 'Tippen Sie einfach ein: nrow(studierende). Achten Sie auf Gross-Klein-Schreibung. Verwenden Sie keine Anfuehrungszeichen.'
+
+- Class: cmd_question
+  Output: "Der Datensatz enthaelt also 300 Faelle. Um noch mehr ueber die Struktur des Datensatzes zu erfahren, verwenden wir den Befehl str(), abgeleitet vom englischen 'structure'. Tippen Sie ein: 'str(studierende)'"
+  CorrectAnswer: str(studierende)
+  AnswerTests: omnitest(correctExpr='str(studierende)')
+  Hint: 'Tippen Sie einfach ein: str(studierende). Achten Sie auf Gross-Klein-Schreibung. Verwenden Sie keine Anfuehrungszeichen.'
+
+- Class: text
+  Output: "Aus der Ausgabe koennen wir folgende Information entnehmen: Der Datensatz enthaelt 300 Faelle (observations) mit zwei Variablen (variables). Die erste Variable heisst Geschlecht und hat wie erwartet zwei Stufen (maennlich und weiblich). Die zweite Variable heisst Studienfach."
+
+- Class: cmd_question
+  Output: "Wie viele verschiedene Studienfaecher sind in dem Datensatz aufgelistet?"
+  CorrectAnswer: 3
+  AnswerTests: omnitest(correctVal=3)
+  Hint: 'Aus der Zeile Studienfach: Factor w/ 3 levels "BWL","Psychologie",.. koennen wir entnehmen, dass es drei verschiedene Studienfaecher gibt.'
+  
+- Class: cmd_question
+  Output: "Eine Haeufigkeitstabelle gibt uns Aufschluss darueber, wie sich die Studierenden auf die Studienfaecher verteilen. Der Befehl table() erstellt eine Haeufigkeitstabelle. Tippen Sie ein: 'table(studierende)'"
+  CorrectAnswer: table(studierende)
+  AnswerTests: omnitest(correctExpr='table(studierende)')
+  Hint: 'Tippen Sie einfach ein: table(studierende). Achten Sie auf Gross-Klein-Schreibung. Verwenden Sie keine Anfuehrungszeichen.'
+  
+- Class: cmd_question
+  Output: "Wie viele BWL-Studierende sind maennlich?"
+  CorrectAnswer: 60
+  AnswerTests: omnitest(correctVal=60)
+  Hint: 'Finden Sie in der Tabelle die Spalte BWL und die Zeile maennlich. Der Wert in dieser Zelle ist 60.'
+
+- Class: figure
+  Output: "Die Haeufigkeitstabelle wird jetzt automatisch gezeigt."
+  Figure: table.R
+  FigureType: new
+
+- Class: cmd_question
+  Output: "Wie viele Studierende sind in Wirtschaftspsychologie eingeschrieben?"
+  CorrectAnswer: 60
+  AnswerTests: omnitest(correctVal=60)
+  Hint: 'Finden Sie in der Tabelle die Spalte Wirtschaftspsychologie. Die Summe dieser Splate betraegt 40 + 20 = 60.'
+
+- Class: cmd_question
+  Output: "Wenn wir zufaellig eine Person aus dem Datensatz auswaehlen: Wie gross ist die Wahrscheinlichkeit, dass die ausgewaehlte Person Wirtschaftspsychologie studiert?"
+  CorrectAnswer: 60/300
+  AnswerTests: omnitest(correctVal=60/300)
+  Hint: 'Auch hier kommt die Laplace-Wahrscheinlichkeit zur Anwendung: es gibt 60 Studierende in Wirtschaftspsychologie, also 60 guenstige Ergebnisse. Es gibt insgesamt 300 Studierende, also 300 moegliche Ergebnisse. Daher P = 60/300 = 0.2. Sie koennen das Ergebnis als Bruch oder als Dezimalzahl angeben. Beachten Sie bei Dezimalzahlen, dass die Kommastellen durch Punkt und nicht durch Komma getrennt werden.'
+
+- Class: cmd_question
+  Output: "Wenn wir zufaellig eine Studierende aus den verzeichneten Frauen auswaehlen: Wie gross ist die Wahrscheinlichkeit, dass die ausgewaehlte Person Wirtschaftspsychologie studiert?"
+  CorrectAnswer: 20/180
+  AnswerTests: omnitest(correctVal=20/180)
+  Hint: 'Analog zur vorherigen Frage, diesmal aber nur in der Zeile weiblich: es gibt 20 weibliche Studierende in Wirtschaftspsychologie, also 20 guenstige Ergebnisse. Es gibt insgesamt 60 + 100 + 20 = 180 weibliche Studierende, also 180 moegliche Ergebnisse. Daher P = 20/180 = 1/9. Geben Sie das Ergebnis als Bruch ein.'
+  
+- Class: text
+  Output: "Diese Wahrscheinlichkeit wird auch bedingte Wahrscheinlichkeit genannt. Die Grundwahrscheinlichkeit in unserem Datensatz fuer Wirtschaftspsychologie ist 60/300 = 0.2. Wenn wir nun Zusatzinformation erhalten, z.B. dass die ausgewaehlte Person weiblich ist, veraendert sich die Wahrscheinlichkeit zu 20/180 = 1/9."
+
+- Class: text
+  Output: "Die Notation fuer bedingte Wahrscheinlichkeiten lautet: P(A|B). Die Wahrscheinlichkeit des Ereignisses A unter der Bedingung B."
+
+- Class: mult_question
+  Output: 'Was bedeutet der Ausdruck P(maennlich|BWL)?' 
+  AnswerChoices: Wahrscheinlichkeit fuer maennlich unter der Bedingung BWL;Wahrscheinlichkeit fuer BWL unter der Bedingung maennlich;Wahrscheinlichkeit fuer maennlich oder BWL; Wahrscheinlichkeit fuer maennlich und BWL
+  CorrectAnswer: Wahrscheinlichkeit fuer maennlich unter der Bedingung BWL
+  AnswerTests: omnitest(correctVal='Wahrscheinlichkeit fuer maennlich unter der Bedingung BWL')
+  Hint: "P(A|B) bedeutet die Wahrscheinlichkeit von A unter der Bedingung B." 
+
+- Class: cmd_question
+  Output: "Wie hoch ist die Wahrscheinlichkeit P(maennlich|BWL)?"
+  CorrectAnswer: 1/2
+  AnswerTests: omnitest(correctVal=1/2)
+  Hint: 'Hier ist nur die Spalte BWL von Interesse: es gibt 60 maennliche Studierende in BWL, also 60 guenstige Ergebnisse. Es gibt insgesamt 60 + 60 = 120 Studierende in BWL, also 120 moegliche Ergebnisse. Daher P = 60/120 = 1/2.  Sie koennen das Ergebnis als Bruch oder als Dezimalzahl angeben. Beachten Sie bei Dezimalzahlen, dass die Kommastellen durch Punkt und nicht durch Komma getrennt werden.'
+
+- Class: cmd_question
+  Output: "Das ueben wir am besten gleich nochmal: Wie hoch ist die Wahrscheinlichkeit P(Psychologie|weiblich)?"
+  CorrectAnswer: 100/180
+  AnswerTests: omnitest(correctVal=100/180)
+  Hint: 'Hier ist nur die Zeile weiblich von Interesse: es gibt 100 weibliche Studierende in Psychologie, also 100 guenstige Ergebnisse. Es gibt insgesamt 180 weibliche Studierende, also 180 moegliche Ergebnisse. Daher P = 100/180 = 5/9.  Sie koennen das Ergebnis als Bruch gekuerzt oder ungekuerzt angeben.'
+
+- Class: cmd_question
+  Output: "Wie hoch ist die Wahrscheinlichkeit beim Wuerfeln P('Zahl 3 im zweiten Wurf'|'Zahl 6 im ersten Wurf')?"
+  CorrectAnswer: 1/6
+  AnswerTests: omnitest(correctVal=1/6)
+  Hint: 'Egal was vorher passiert ist, die Wahrscheinlichkeit die Zahl 3 zu wuerfeln ist immer 1/6.'
+
+- Class: text
+  Output: "Beim Wuerfeln sind die Ereignisse unabhaengig. Daher ist die bedingte Wahrscheinlichkeit P('Zahl 3 im zweiten Wurf'|'Zahl 6 im ersten Wurf') gleich der einfachen Wahrscheinlichkeit P('Zahl 3 im zweiten Wurf')."
+
+- Class: text
+  Output: "Sie haben das Ende des Kapitels Wahrscheinlichkeitsrechnung erreicht. Sie haben einige einfache Berechnungen von Wahrscheinlichkeiten und bedingten Wahrscheinlichkeiten kennen gelernt. Ausserdem haben Sie die Darstellungsformen Wahrscheinlichkeitsbaum und Haeufigkeitsdiagramm gesehen. Mit diesen einfachen Mitteln lassen sich bereits viele Fragestellungen der Wahrscheinlichkeitstheorie beantworten."
+
