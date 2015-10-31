@@ -11,7 +11,7 @@
   Output: "In diesem Kapitel lernen Sie die Wahrscheinlichkeit bestimmter Ereignisse zu berechnen."
 
 - Class: text
-  Output: "Im vorherigen Kapitel hatten wir bereits festgestellt, dass es gar nicht so schwer ist, mit Hilfe der Formel fuer die Laplace-Wahrscheinlichkeit auzurechnen, wie wahrscheinlich ein Ereignis ist, das sich aus mehreren Ergebnissen zusammen setzt."
+  Output: "Im vorherigen Kapitel hatten wir bereits festgestellt, dass es gar nicht so schwer ist, mit Hilfe der Formel fuer die Laplace-Wahrscheinlichkeit auzurechnen, wie wahrscheinlich ein Ereignis ist, das sich aus mehreren Ergebnissen zusammensetzt."
 
 - Class: mult_question
   Output: 'Nur zur Wiederholung: Wie hoch ist die Wahrscheinlichkeit beim zweimaligen Werfen eines Wuerfels die Augensumme 3 zu erhalten? Ueberlegen Sie, wie viele guenstige und wie viele moegliche Ergebnisse es gibt.' 
@@ -25,7 +25,7 @@
   AnswerChoices: 1/18;36/1;2;1/36;1/2;2/9
   CorrectAnswer: 1/36
   AnswerTests: omnitest(correctVal='1/36')
-  Hint: "P(Ereignis) = (Anzahl guenstiger Ergebnisse) / (Anzahl moeglicher Ergebnisse). Die Augensumme 3 kann bei zwei Ergebnissen entstehen, naemlich bei '1-2' und bei '2-1'. Andere Kombinationen gibt es nicht. Die Anzahl guenstiger Ergebnisse betraegt also 2. Die Anzahl moeglicher Ergebnisse betraegt immer noch 36. Achtung, der Bruch laesst sich kuerzen." 
+  Hint: "P(Ereignis) = (Anzahl guenstiger Ergebnisse) / (Anzahl moeglicher Ergebnisse). Nur ein Ergebnis ist gesucht, erst 6, dann 3. Die Anzahl guenstiger Ergebnisse betraegt also 1. Die Anzahl moeglicher Ergebnisse betraegt immer noch 36."
 
 - Class: text
   Output: "Tatsaechlich kann man diese Aufgabe auf mindestens zwei verschiedene Arten loesen. Entweder wir zaehlen die Anzahl der guenstigen und die der moeglichen Ereignisse, wie schon bei der ersten Aufgabe."
@@ -69,16 +69,16 @@
   AnswerChoices: 0;1;Anzahl der Zweige;1/2
   CorrectAnswer: 1
   AnswerTests: omnitest(correctVal='1')
-  Hint: "Addieren Sie zur Probe die Wahrscheinlichkeiten für den ersten Wurf: 1/6 + 5/6" 
+  Hint: "Addieren Sie zur Probe die Wahrscheinlichkeiten fuer den ersten Wurf: 1/6 + 5/6" 
 
 - Class: text
   Output: "Der grosse Vorteil der Veranschaulichung mit einem Wahrscheinlichkeitsbaum ist: Die verschiedenen Faelle werden klar unterschieden und die Wahrscheinlichkeit von komplizierten Ereignissen kann meist recht leicht abgeleitet werden."
 
 - Class: text
-  Output: "Die Endpunkte des Baumes werden Blaetter genannt. Um zu die Wahrscheinlichkeit des Pfades bis zu einem bestimmten Blatt zu bestimmen, kann man einfach die Wahrscheinlichkeiten der jeweiligen Zweige miteinander multiplizieren. Entsprechend ergibt sich, wie wir bereits gesehen hatten, die Wahrscheinlichkeit von P('6-3') aus dem Pfad P(6 im ersten Wurf) * P(3 im zweiten Wurf) = 1/6 * 1/6 = 1/36. "
+  Output: "Die Endpunkte des Baumes werden Blaetter genannt. Um nun die Wahrscheinlichkeit des Pfades bis zu einem bestimmten Blatt zu bestimmen, kann man einfach die Wahrscheinlichkeiten der jeweiligen Zweige miteinander multiplizieren. Entsprechend ergibt sich, wie wir bereits gesehen hatten, die Wahrscheinlichkeit von P('6-3') aus dem Pfad P(6 im ersten Wurf) * P(3 im zweiten Wurf) = 1/6 * 1/6 = 1/36. "
 
 - Class: cmd_question
-  Output: "Wie gross ist also die Wahrscheinlichkeit erst die Zahl 6 und dann nicht die Zahl 3 zu wuerfeln? Berechnen Sie das Endergebnis im Kopf oder geben Sie die Berechnungsformel ein (z.B. im Format 1/3 * 1/3)."
+  Output: "Wie gross ist also die Wahrscheinlichkeit erst die Zahl 6 und dann NICHT die Zahl 3 zu wuerfeln? Berechnen Sie das Endergebnis im Kopf oder geben Sie die Berechnungsformel ein (z.B. im Format 1/3 * 1/3)."
   CorrectAnswer: 5/36
   AnswerTests: omnitest(correctVal=5/36)
   Hint: 'Aus dem Pfad im Wahrscheinlichkeitsbaum ergibt sich: 1/6 * 5/6'
@@ -161,10 +161,10 @@
   AnswerChoices: Wahrscheinlichkeit fuer maennlich unter der Bedingung BWL;Wahrscheinlichkeit fuer BWL unter der Bedingung maennlich;Wahrscheinlichkeit fuer maennlich oder BWL; Wahrscheinlichkeit fuer maennlich und BWL
   CorrectAnswer: Wahrscheinlichkeit fuer maennlich unter der Bedingung BWL
   AnswerTests: omnitest(correctVal='Wahrscheinlichkeit fuer maennlich unter der Bedingung BWL')
-  Hint: "P(A|B) bedeutet die Wahrscheinlichkeit von A unter der Bedingung B." 
+  Hint: "P(A|B) bedeutet die Wahrscheinlichkeit von A unter der Bedingung B. Was bedeutet also der Ausdruck P(maennlich|BWL)?" 
 
 - Class: cmd_question
-  Output: "Wie hoch ist die Wahrscheinlichkeit P(maennlich|BWL)?"
+  Output: "Wie hoch ist die Wahrscheinlichkeit P(maennlich|BWL)? Verwenden Sie wiederum die Haeufigkeitstabelle."
   CorrectAnswer: 1/2
   AnswerTests: omnitest(correctVal=1/2)
   Hint: 'Hier ist nur die Spalte BWL von Interesse: es gibt 60 maennliche Studierende in BWL, also 60 guenstige Ergebnisse. Es gibt insgesamt 60 + 60 = 120 Studierende in BWL, also 120 moegliche Ergebnisse. Daher P = 60/120 = 1/2.  Sie koennen das Ergebnis als Bruch oder als Dezimalzahl angeben. Beachten Sie bei Dezimalzahlen, dass die Kommastellen durch Punkt und nicht durch Komma getrennt werden.'
