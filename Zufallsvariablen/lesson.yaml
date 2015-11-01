@@ -1,6 +1,6 @@
 - Class: meta
   Course: Wahrscheinlichkeitstheorie
-  Lesson: Grundlegende Konzepte
+  Lesson: Zufallsvariablen
   Author: PFH
   Type: Standard
   Organization: PFH Private Hochschule Göttingen
@@ -9,12 +9,46 @@
   
 # Begrüßung  
 - Class: text
-  Output: "Dieser Kurs ist Teil der Studiengaenge Psychologie und Wirtschaftspsychologie an der PFH Private Hochschule Goettingen. In diesem Kapitel lernen Sie einige grundlegende Konzepte der Wahrscheinlichkeitsrechnung kennen."
+  Output: "In diesem Kapitel lernen Sie was eine Zufallsvariable ist."
+
+- Class: mult_question
+  Output: 'Diese Frage hatten wir schon in den beiden vorherigen Kapiteln: Wie hoch ist die Wahrscheinlichkeit beim zweimaligen Werfen eines Wuerfels die Augensumme 3 zu erhalten? Ueberlegen Sie, wie viele guenstige und wie viele moegliche Ergebnisse es gibt.' 
+  AnswerChoices: 1/18;36/2;2;36;1/2;2/9
+  CorrectAnswer: 1/18
+  AnswerTests: omnitest(correctVal='1/18')
+  Hint: "Inzwischen sollten Sie die richtige Antwort eigentlich laengst kennen. P(Ereignis) = (Anzahl guenstiger Ergebnisse) / (Anzahl moeglicher Ergebnisse). Die Augensumme 3 kann bei zwei Ergebnissen entstehen, naemlich bei '1-2' und bei '2-1'. Andere Kombinationen gibt es nicht. Die Anzahl guenstiger Ergebnisse betraegt also 2. Die Anzahl moeglicher Ergebnisse betraegt immer noch 36. Achtung, der Bruch laesst sich kuerzen." 
+
+- Class: cmd_question
+  Output: "Wie hoch ist die Wahrscheinlichkeit beim zweimaligen Werfen eines Wuerfels die Augensumme 2 zu erhalten?"
+  CorrectAnswer: 1/36
+  AnswerTests: omnitest(correctVal='1/36')
+  Hint: "Die Augensumme 2 kann bei genau einem Ergebnissen entstehen, naemlich bei '1-1'. Andere Kombinationen gibt es nicht. Die Anzahl guenstiger Ergebnisse betraegt also 1. Die Anzahl moeglicher Ergebnisse betraegt immer noch 36."
+  
+- Class: cmd_question
+  Output: "Was ist die hoechste Augensumme, die beim zweimaligen Werfen eines Wuerfels entstehen kann?"
+  CorrectAnswer: 12
+  AnswerTests: omnitest(correctVal='12')
+  Hint: "Die hoechste Augensumme ist natürlich 6 + 6."
+
+- Class: cmd_question
+  Output: "Wie hoch ist die Wahrscheinlichkeit beim zweimaligen Werfen eines Wuerfels die Augensumme 12 zu erhalten?"
+  CorrectAnswer: 1/36
+  AnswerTests: omnitest(correctVal='1/36')
+  Hint: "Die Augensumme 12 kann bei genau einem Ergebnissen entstehen, naemlich bei '6-6'. Andere Kombinationen gibt es nicht. Die Anzahl guenstiger Ergebnisse betraegt also 1. Die Anzahl moeglicher Ergebnisse betraegt immer noch 36."
 
 - Class: text
-  Output: "Als erstes beschaeftigen wir uns mit den Begriffen Zufallsvorgang, Ergebnis und Ereignis."
+  Output: "Die kleinste Augensumme betraegt 2, die hoechste Augensumme betraegt 12. Fuer jede Augensumme zwischen 2 und 12 koennen wir die Wahrscheinlichkeit berechnen. Fuer kleine und grosse sind die Wahrscheinlichkeiten leicht berechnet, wie wir gesehen haben."
 
-# Zufallsvorgang
+
+- Class: text
+  Output: "Fuer die Augensummen dazwischen funktioniert die Berechnung nach dem gleichen Prinzip, nur ist es etwas aufwaendiger, die unterschiedlichen Kombinationen zusammen zu suchen."
+  
+- Class: figure
+  Output: "Wir haben mal fuer Sie aus gerechnet, wie viele guenstige Ergebnisse es fuer welche Augensumme gibt. Wie Sie aus dem Histogramm entnehmen koennen, gibt es zum Beispiel sechs Ergebnisse."
+  Figure: histogram.R
+  FigureType: new  
+  
+  # Zufallsvorgang
 - Class: text
   Output: "Ein Zufallsvorgang ist ein Vorgang, dessen moegliche Resultate im Voraus festliegen, wobei jedoch ungewiss ist, welches Resultat bei der Durchfuehrung im Einzelnen eintreten wird (Holling & Gediga, 2013)."
   
@@ -33,9 +67,9 @@
 
 - Class: mult_question
   Output: "Wie lautet der Ergebnisraum beim Werfen eines Wuerfels?"
-  AnswerChoices:  "{1, 2, 3, 4, 5, 6};{Kopf, Zahl};{};{Wuerfel}"
-  CorrectAnswer:  "{1, 2, 3, 4, 5, 6}"
-  AnswerTests: omnitest(correctVal="{1, 2, 3, 4, 5, 6}")
+  AnswerChoices:  1, 2, 3, 4, 5, 6; Kopf, Zahl; leere Menge
+  CorrectAnswer:  1, 2, 3, 4, 5, 6
+  AnswerTests: omnitest(correctVal='1, 2, 3, 4, 5, 6')
   Hint: "Der Ergebnisraum beinhaltet alle sechs moeglichen Ergebnisse eines Wurfes."
 
 - Class: text
