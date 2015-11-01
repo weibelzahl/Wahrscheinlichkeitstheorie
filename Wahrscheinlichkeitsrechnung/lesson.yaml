@@ -128,7 +128,7 @@
   Hint: 'Finden Sie in der Tabelle die Spalte BWL und die Zeile maennlich. Der Wert in dieser Zelle ist 60.'
 
 - Class: figure
-  Output: "Die Haeufigkeitstabelle wird jetzt automatisch gezeigt."
+  Output: "Hier noch einmal die Haeufigkeitstabelle, damit Sie die naechste Aufgabe loesen koennen."
   Figure: table.R
   FigureType: new
 
@@ -162,6 +162,11 @@
   CorrectAnswer: Wahrscheinlichkeit fuer maennlich unter der Bedingung BWL
   AnswerTests: omnitest(correctVal='Wahrscheinlichkeit fuer maennlich unter der Bedingung BWL')
   Hint: "P(A|B) bedeutet die Wahrscheinlichkeit von A unter der Bedingung B. Was bedeutet also der Ausdruck P(maennlich|BWL)?" 
+
+- Class: figure
+  Output: "Noch einmal die bekannte Haeufigkeitstabelle:"
+  Figure: table.R
+  FigureType: new
 
 - Class: cmd_question
   Output: "Wie hoch ist die Wahrscheinlichkeit P(maennlich|BWL)? Verwenden Sie wiederum die Haeufigkeitstabelle."
