@@ -11,7 +11,7 @@
   Output: "In diesem Kapitel lernen Sie die Wahrscheinlichkeit bestimmter Ereignisse zu berechnen."
 
 - Class: text
-  Output: "Im vorherigen Kapitel hatten wir bereits festgestellt, dass es gar nicht so schwer ist, mit Hilfe der Formel fuer die Laplace-Wahrscheinlichkeit auzurechnen, wie wahrscheinlich ein Ereignis ist, das sich aus mehreren Ergebnissen zusammensetzt."
+  Output: "Im vorherigen Kapitel hatten wir bereits festgestellt, dass es gar nicht so schwer ist, mit Hilfe der Formel fuer die Laplace-Wahrscheinlichkeit auszurechnen, wie wahrscheinlich ein Ereignis ist, das sich aus mehreren Ergebnissen zusammensetzt."
 
 - Class: mult_question
   Output: 'Nur zur Wiederholung: Wie hoch ist die Wahrscheinlichkeit beim zweimaligen Werfen eines Wuerfels die Augensumme 3 zu erhalten? Ueberlegen Sie, wie viele guenstige und wie viele moegliche Ergebnisse es gibt.' 
@@ -95,7 +95,7 @@
   Figure: studierende.R
 
 - Class: cmd_question
-  Output: "Zunaechst wollen wir herausfinden, wie viele Studierende in diesem Datensatz verzeichnet sind. Der Befehl fuer die Anzahl der Zeilen lautet nrow(). Tippen Sie also einfach: 'nrow(studierende)'"
+  Output: "Zunaechst wollen wir herausfinden, wie viele Studierende in diesem Datensatz verzeichnet sind. Der Befehl fuer die Anzahl der Zeilen lautet nrow(). Tippen Sie also einfach: 'nrow(studierende)'. Achten Sie unbedingt auf Gross- und Kleinschreibung, da in R die Schreibweisen unterschieden werden. "
   CorrectAnswer: nrow(studierende)
   AnswerTests: omnitest(correctExpr='nrow(studierende)')
   Hint: 'Tippen Sie einfach ein: nrow(studierende). Achten Sie auf Gross-Klein-Schreibung. Verwenden Sie keine Anfuehrungszeichen.'
@@ -128,7 +128,7 @@
   Hint: 'Finden Sie in der Tabelle die Spalte BWL und die Zeile maennlich. Der Wert in dieser Zelle ist 60.'
 
 - Class: figure
-  Output: "Die Haeufigkeitstabelle wird jetzt automatisch gezeigt."
+  Output: "Hier noch einmal die bekannte Haeufigkeitstabelle."
   Figure: table.R
   FigureType: new
 
@@ -144,7 +144,12 @@
   AnswerTests: omnitest(correctVal=60/300)
   Hint: 'Auch hier kommt die Laplace-Wahrscheinlichkeit zur Anwendung: es gibt 60 Studierende in Wirtschaftspsychologie, also 60 guenstige Ergebnisse. Es gibt insgesamt 300 Studierende, also 300 moegliche Ergebnisse. Daher P = 60/300 = 0.2. Sie koennen das Ergebnis als Bruch oder als Dezimalzahl angeben. Beachten Sie bei Dezimalzahlen, dass die Kommastellen durch Punkt und nicht durch Komma getrennt werden.'
 
-- Class: cmd_question
+- Class: figure
+  Output: "Hier noch einmal die bekannte Haeufigkeitstabelle."
+  Figure: table.R
+  FigureType: new
+
+  - Class: cmd_question
   Output: "Wenn wir zufaellig eine Studierende aus den verzeichneten Frauen auswaehlen: Wie gross ist die Wahrscheinlichkeit, dass die ausgewaehlte Person Wirtschaftspsychologie studiert?"
   CorrectAnswer: 20/180
   AnswerTests: omnitest(correctVal=20/180)
@@ -163,8 +168,13 @@
   AnswerTests: omnitest(correctVal='Wahrscheinlichkeit fuer maennlich unter der Bedingung BWL')
   Hint: "P(A|B) bedeutet die Wahrscheinlichkeit von A unter der Bedingung B. Was bedeutet also der Ausdruck P(maennlich|BWL)?" 
 
-- Class: cmd_question
-  Output: "Wie hoch ist die Wahrscheinlichkeit P(maennlich|BWL)? Verwenden Sie wiederum die Haeufigkeitstabelle."
+- Class: figure
+  Output: "Hier noch einmal die bekannte Haeufigkeitstabelle."
+  Figure: table.R
+  FigureType: new
+
+  - Class: cmd_question
+  Output: "Wie hoch ist die Wahrscheinlichkeit P(maennlich|BWL)?"
   CorrectAnswer: 1/2
   AnswerTests: omnitest(correctVal=1/2)
   Hint: 'Hier ist nur die Spalte BWL von Interesse: es gibt 60 maennliche Studierende in BWL, also 60 guenstige Ergebnisse. Es gibt insgesamt 60 + 60 = 120 Studierende in BWL, also 120 moegliche Ergebnisse. Daher P = 60/120 = 1/2.  Sie koennen das Ergebnis als Bruch oder als Dezimalzahl angeben. Beachten Sie bei Dezimalzahlen, dass die Kommastellen durch Punkt und nicht durch Komma getrennt werden.'
