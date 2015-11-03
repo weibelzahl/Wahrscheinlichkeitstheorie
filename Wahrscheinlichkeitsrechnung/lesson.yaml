@@ -128,11 +128,7 @@
   Hint: 'Finden Sie in der Tabelle die Spalte BWL und die Zeile maennlich. Der Wert in dieser Zelle ist 60.'
 
 - Class: figure
-<<<<<<< HEAD
   Output: "Hier noch einmal die bekannte Haeufigkeitstabelle."
-=======
-  Output: "Die Haeufigkeitstabelle wird jetzt automatisch gezeigt."
->>>>>>> parent of 3dfd450... swap table.txt with printing table
   Figure: table.R
   FigureType: new
 
@@ -172,7 +168,6 @@
   AnswerTests: omnitest(correctVal='Wahrscheinlichkeit fuer maennlich unter der Bedingung BWL')
   Hint: "P(A|B) bedeutet die Wahrscheinlichkeit von A unter der Bedingung B. Was bedeutet also der Ausdruck P(maennlich|BWL)?" 
 
-<<<<<<< HEAD
 - Class: figure
   Output: "Hier noch einmal die bekannte Haeufigkeitstabelle."
   Figure: table.R
@@ -180,10 +175,6 @@
 
   - Class: cmd_question
   Output: "Wie hoch ist die Wahrscheinlichkeit P(maennlich|BWL)?"
-=======
-- Class: cmd_question
-  Output: "Wie hoch ist die Wahrscheinlichkeit P(maennlich|BWL)? Verwenden Sie wiederum die Haeufigkeitstabelle."
->>>>>>> parent of 3dfd450... swap table.txt with printing table
   CorrectAnswer: 1/2
   AnswerTests: omnitest(correctVal=1/2)
   Hint: 'Hier ist nur die Spalte BWL von Interesse: es gibt 60 maennliche Studierende in BWL, also 60 guenstige Ergebnisse. Es gibt insgesamt 60 + 60 = 120 Studierende in BWL, also 120 moegliche Ergebnisse. Daher P = 60/120 = 1/2.  Sie koennen das Ergebnis als Bruch oder als Dezimalzahl angeben. Beachten Sie bei Dezimalzahlen, dass die Kommastellen durch Punkt und nicht durch Komma getrennt werden.'
