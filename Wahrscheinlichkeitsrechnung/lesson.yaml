@@ -128,11 +128,7 @@
   Hint: 'Finden Sie in der Tabelle die Spalte BWL und die Zeile maennlich. Der Wert in dieser Zelle ist 60.'
 
 - Class: figure
-<<<<<<< HEAD
-  Output: "Hier noch einmal die bekannte Haeufigkeitstabelle."
-=======
   Output: "Hier noch einmal die Haeufigkeitstabelle, damit Sie die naechste Aufgabe loesen koennen."
->>>>>>> refs/remotes/origin/development
   Figure: table.R
   FigureType: new
 
