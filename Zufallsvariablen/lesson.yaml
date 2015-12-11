@@ -64,23 +64,23 @@
   Hint: "Die Summe der Wahrscheinlichkeiten aller Ereignisse ist immer 1."
 
 - Class: text
-  Output: "Damit haben wir bereits eine einfache Zufallsvariable erzeugt. Der neue Wahrscheinlichkeitsraum 'Augensumme' entsteht aus dem Ur-Wahrscheinlichkeitsraum durch eine messbare Abbildung. Die Abbildung heisst messbar, weil jedem Ergebnis im urspruenglichen Wahrscheinlichkeitsraum ein Ereignis im neuen Wahrscheinlichkeitsraum zugeordnet ist. das klingt ewas kompliziert, ist aber gar nicht so schwer zu verstehen, wie wir an dem Beispiel gesehen haben."
+  Output: "Damit haben wir bereits eine einfache Zufallsvariable erzeugt. Der neue Wahrscheinlichkeitsraum 'Augensumme' entsteht aus dem Ur-Wahrscheinlichkeitsraum durch eine messbare Abbildung. Die Abbildung heisst messbar, weil jedem Ergebnis im urspruenglichen Wahrscheinlichkeitsraum ein Ereignis im neuen Wahrscheinlichkeitsraum zugeordnet ist. Das klingt ewas kompliziert, ist aber gar nicht so schwer zu verstehen, wie wir an dem Beispiel gesehen haben."
   
 - Class: text
   Output: "Solche Zufallsvariablen werden meist mit einem Grossbuchstaben bezeichnet, oft einfach 'X' oder 'Y'."
 
 - Class: mult_question
-  Output: 'Wofür steht dann wohl der Ausdruck P(X=5)?' 
-  AnswerChoices: Die Wahrscheinlichkeit, dass die Zufallsvariable X den Wert 5 annimmt;Die Wahrscheinlichkeit fuenf x in Folge zu erhalten;Die Wahrscheinlichkeit, dass die Zufallsvariable P den Wert 5 annimmt;Die Wahrscheinlichkeitder Zahl 5
+  Output: 'Wofuer steht dann wohl der Ausdruck P(X=5)?' 
+  AnswerChoices: Die Wahrscheinlichkeit, dass die Zufallsvariable X den Wert 5 annimmt;Die Wahrscheinlichkeit fuenf x in Folge zu erhalten;Die Wahrscheinlichkeit, dass die Zufallsvariable P den Wert 5 annimmt;Die Wahrscheinlichkeit der Zahl 5
   CorrectAnswer: Die Wahrscheinlichkeit, dass die Zufallsvariable X den Wert 5 annimmt
-  AnswerTests: omnitest(correctExpr='Die Wahrscheinlichkeit, dass die Zufallsvariable X den Wert 5 annimmt')
+  AnswerTests: omnitest(correctVal="Die Wahrscheinlichkeit, dass die Zufallsvariable X den Wert 5 annimmt")
   Hint: "'X' steht fuer eine Zufallsvariable. 'P' steht fuer Wahrscheinlichkeit. Die Zufallsvariable soll den Wert 5 annehmen." 
 
 - Class: mult_question
-  Output: 'Jetzt wissen Sie sicher auch, wofür der Ausdruck P(X<2) steht?' 
+  Output: 'Jetzt wissen Sie sicher auch, wofuer der Ausdruck P(X<2) steht?' 
   AnswerChoices: Die Wahrscheinlichkeit, dass die Zufallsvariable X einen Wert kleiner 2 annimmt;Die Wahrscheinlichkeit, dass die Zufallsvariable X einen Wert groesser 2 annimmt;Die Wahrscheinlichkeit, dass X groesser 2 ist
   CorrectAnswer: Die Wahrscheinlichkeit, dass die Zufallsvariable X einen Wert kleiner 2 annimmt
-  AnswerTests: omnitest(correctExpr='Die Wahrscheinlichkeit, dass die Zufallsvariable X einen Wert kleiner 2 annimmt')
+  AnswerTests: omnitest(correctVal="Die Wahrscheinlichkeit, dass die Zufallsvariable X einen Wert kleiner 2 annimmt")
   Hint: "'X' steht fuer eine Zufallsvariable. 'P' steht fuer Wahrscheinlichkeit. Die Zufallsvariable soll einen Wert kleiner 2 annehmen." 
 
 - Class: text
@@ -88,27 +88,27 @@
   
 # stetige Zufallsvariablen
 - Class: text
-  Output: "Wir gehen noch einen Schritt weiter: In unserem Beispiel kann die Zufallsvariable nur einige wenige Werte annehmen. Die Augensumme kann nur Ganzzahlig sein. Aber was ist mit der Zufallsvariable Tageshöchsttemperatur? Wenn wir nur genau genug messen, kann diese Werte (fast) beliebige Werte annehmen."
+  Output: "Wir gehen noch einen Schritt weiter: In unserem Beispiel kann die Zufallsvariable nur einige wenige Werte annehmen. Die Augensumme kann nur ganzzahlig sein. Aber was ist mit der Zufallsvariable Tageshoechsttemperatur? Wenn wir nur genau genug messen, kann diese Werte (fast) beliebige Werte annehmen."
 
 - Class: mult_question
   Output: 'Ein weiteres Beispiel ist der exakte Winkel bei dem ein Gluecksrad zum stehen kommt. Welche Werte kann der Winkel (gemessen in Grad) annehmen?' 
   AnswerChoices: "]0, 360];{90, 180};0 Grad Celsius"
   CorrectAnswer: "]0, 360]"
-  AnswerTests: omnitest(correctExpr=']0, 360]')
+  AnswerTests: omnitest(correctVal=']0, 360]')
   Hint: "Das Intervall zwischen 0 und 360 Grad."   
 
 - Class: mult_question
   Output: 'Um welche Art von Zufallsvariable handelt es sich also beim Winkel der Drehung eines Gluecksrades?' 
   AnswerChoices: "diskrete Zufallsvariable;stetige Zufallsvariable;dikreditierte Zufallsvariable;steile Zufallsvariable;statische Zufallsvariable"
   CorrectAnswer: "stetige Zufallsvariable"
-  AnswerTests: omnitest(correctExpr='stetige Zufallsvariable')
+  AnswerTests: omnitest(correctVal="stetige Zufallsvariable")
   Hint: "Es gibt nur stetige und diskrete Zufallsvariablen. Die anderen Bezeichnungen sind frei erfunden."   
   
 - Class: mult_question
   Output: 'Um welche Art von Zufallsvariable handelt es sich also beim der Anzahl von Arbeitsunfaellen, die in einem Betrieb innerhalb eines Monats ereignen?' 
   AnswerChoices: "diskrete Zufallsvariable;stetige Zufallsvariable;dikreditierte Zufallsvariable;steile Zufallsvariable;statische Zufallsvariable"
   CorrectAnswer: "diskrete Zufallsvariable"
-  AnswerTests: omnitest(correctExpr='diskrete Zufallsvariable')
+  AnswerTests: omnitest(correctVal="diskrete Zufallsvariable")
   Hint: "Es gibt nur stetige und diskrete Zufallsvariablen. Die anderen Bezeichnungen sind frei erfunden."   
 
 - Class: text
@@ -121,23 +121,23 @@
   Hint: "Gehen Sie nach der altbekannten Formel vor: Anzahl der guenstigen Ergebnisse geteilt durch die Anzahl der moeglichen Ergebnisse. Es gibt ein guenstiges Ergebnis (das erste Segment) und 360 moegliche Ergebnisse. Tippen Sie: 1/360"
 
 - Class: cmd_question
-  Output: "Wie gross ist die Wahrscheinlichkeit ist die Wahrscheinlichkeit, dass das Gluecksrad im 91. Segment (also zwischen 90 und 91 Grad) zum Stehen kommt? (Geben Sie das Ergebnis als Bruch ein)"
+  Output: "Wie gross ist die Wahrscheinlichkeit, dass das Gluecksrad im 91. Segment (also zwischen 90 und 91 Grad) zum Stehen kommt? (Geben Sie das Ergebnis als Bruch ein)"
   CorrectAnswer: 1/360
   AnswerTests: omnitest(correctVal=1/360)
   Hint: "Genauso wie bei der vorherigen Frage: Anzahl der guenstigen Ergebnisse geteilt durch die Anzahl der moeglichen Ergebnisse. Es gibt ein guenstiges Ergebnis (das 91. Segment) und 360 moegliche Ergebnisse. Tippen Sie: 1/360"
 
 - Class: mult_question
-  Output: 'Wenn wir den Winkel aber noch genauer messen, ergeben sich nicht nur volle Gradzahlen, sondern z.B. auch 90,5. Wenn wir die Breite der ohnehin schon sehr schmalen Kuchenstücke halbieren, was passiert mit der Wahrscheinlichkeit fuer jedes Segment?' 
+  Output: 'Wenn wir den Winkel aber noch genauer messen, ergeben sich nicht nur volle Gradzahlen, sondern z.B. auch 90,5. Wenn wir die Breite der ohnehin schon sehr schmalen Kuchenstuecke halbieren, was passiert mit der Wahrscheinlichkeit fuer jedes Segment?' 
   AnswerChoices: "sie halbiert sich ebenfalls;sie verdoppelt sich;sie bleibt gleich"
   CorrectAnswer: "sie halbiert sich ebenfalls"
-  AnswerTests: omnitest(correctExpr='sie halbiert sich ebenfalls')
+  AnswerTests: omnitest(correctVal="sie halbiert sich ebenfalls")
   Hint: "Wenn es doppelt so viele Segmente gibt, halbiert sich die Wahrscheinlichkeit fuer jedes Segment."   
 
 - Class: text
   Output: "So wird schnell klar, dass es keinen Sinn ergibt, einer Gradzahl eine einzelne Wahrscheinlichkeit zuzuordnen. Stattdessen spricht man nur noch von Wahrscheinlichkeitsdichten."
   
 - Class: text
-  Output: "Statt der Wahrscheinlichkeitsdichte an einer bestimmten Stelle der Verteilung interessiert uns meist ein Intervall, z.B. wie wahrscheinlich war es, höchstens drei Treffer bei 10 Versuchen zu landen. Bei diskreten Verteilungen entspricht das der Summe der Wahrscheinlichkeiten der Ereignisse in diesem Intervall. Bei stetigen Verteilungen entspricht das der Flaeche unter der Verteilungskurve."
+  Output: "Statt der Wahrscheinlichkeitsdichte an einer bestimmten Stelle der Verteilung interessiert uns meist ein Intervall, z.B. wie wahrscheinlich war es, hoechstens drei Treffer bei 10 Versuchen zu landen. Bei diskreten Verteilungen entspricht das der Summe der Wahrscheinlichkeiten der Ereignisse in diesem Intervall. Bei stetigen Verteilungen entspricht das der Flaeche unter der Verteilungskurve."
 
 - Class: text
   Output: "Sie werden in diesem Kurs mehrere diskrete und stetige Wahrscheinlichkeitsverteilungen kennenlernen und dann jeweils die wahrscheinlichkeit bestimmter Intervalle bestimmen."
