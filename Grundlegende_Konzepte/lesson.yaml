@@ -33,9 +33,9 @@
 
 - Class: mult_question
   Output: "Wie lautet der Ergebnisraum beim Werfen eines Wuerfels?"
-  AnswerChoices:  1, 2, 3, 4, 5, 6; Kopf, Zahl; leere Menge
-  CorrectAnswer:  1, 2, 3, 4, 5, 6
-  AnswerTests: omnitest(correctVal='1, 2, 3, 4, 5, 6')
+  AnswerChoices:  "{1, 2, 3, 4, 5, 6};{Kopf, Zahl};{};{Wuerfel}"
+  CorrectAnswer:  "{1, 2, 3, 4, 5, 6}"
+  AnswerTests: omnitest(correctVal="{1, 2, 3, 4, 5, 6}")
   Hint: "Der Ergebnisraum beinhaltet alle sechs moeglichen Ergebnisse eines Wurfes."
 
 - Class: text
