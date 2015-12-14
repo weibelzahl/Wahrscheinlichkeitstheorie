@@ -16,7 +16,7 @@
 
   
 - Class: mult_question
-  Output: 'Wir nehmen an, dass die Treffer Wahrscheinlichkeit bei jedem Schuss 60% betraegt. Wie gross ist die Wahrscheinlichkeit P(Treffer)?' 
+  Output: 'Wir nehmen an, dass die Trefferwahrscheinlichkeit bei jedem Schuss 60% betraegt. Wie gross ist die Wahrscheinlichkeit P(Treffer)?' 
   AnswerChoices: 0.6;0.4;60;40
   CorrectAnswer: 0.6
   AnswerTests: omnitest(correctVal='0.6')
@@ -62,9 +62,9 @@
   
 - Class: mult_question
   Output: 'Wir haben also bereits ermittelt, wie gross die Wahrscheinlichkeit fuer genau 10 und genau 0 Treffer ist. Wie gross ist aber die Wahrscheinlichkeit, dass bei den 10 Schuessen genau ein Treffer faellt?' 
-  AnswerChoices: 0.4*0.6^9*10;0.6^10*10;0.4^9*10
-  CorrectAnswer: 0.4*0.6^9*10
-  AnswerTests: omnitest(correctVal='0.4*0.6^9*10')
+  AnswerChoices: 0.6*0.4^9*10;0.6^10*10;0.4^9*10
+  CorrectAnswer: 0.6*0.4^9*10
+  AnswerTests: omnitest(correctVal='0.6*0.4^9*10')
   Hint: "Die Antwort laesst sich aus den beiden vorherigen Antworten ableiten. Es gibt 10 Kombinationen wann der Treffer bei 10 Schuessen auftreten kann. Jede dieser Kombinationen hat die gleiche Wahrscheinlichkeit: P(X) = 0.6 * 0.4^9. " 
 
 - Class: text
@@ -160,9 +160,9 @@
   
 - Class: mult_question
   Output: 'p steht also fuer die Erfolgswahrscheinlichkeit; k steht fuer die Anzahl der Treffer. Was bedeutet dann der Term p^k in der Formel?' 
-  AnswerChoices: "Die Wahrscheinlichkeit von k Treffern;Die Wahrscheinlichkeit von p Treffern"
-  CorrectAnswer: "Die Wahrscheinlichkeit von k Treffern"
-  AnswerTests: omnitest(correctVal='Die Wahrscheinlichkeit von k Treffern')
+  AnswerChoices: "die Wahrscheinlichkeit von k Treffern bei k Versuchen;die Wahrscheinlichkeit von p Treffern bei k Versuchen;die Wahrscheinlichkeit von k Treffern bei p Versuchen"
+  CorrectAnswer: "die Wahrscheinlichkeit von k Treffern"
+  AnswerTests: omnitest(correctVal='die Wahrscheinlichkeit von k Treffern')
   Hint: "p steht fuer die Erfolgswahrscheinlichkeit bei jedem einzelnen Versuch. Das die Versuche unabhaengig voneinander sind, werden die Wahrscheinlichkeiten miteinander multipliziert. Fuer k Treffer also p^k." 
   
 - Class: text
