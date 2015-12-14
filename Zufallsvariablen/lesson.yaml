@@ -88,10 +88,10 @@
   
 # stetige Zufallsvariablen
 - Class: text
-  Output: "Wir gehen noch einen Schritt weiter: In unserem Beispiel kann die Zufallsvariable nur einige wenige Werte annehmen. Die Augensumme kann nur ganzzahlig sein. Aber was ist mit der Zufallsvariable Tageshoechsttemperatur? Wenn wir nur genau genug messen, kann diese Werte (fast) beliebige Werte annehmen."
+  Output: "Wir gehen noch einen Schritt weiter: In unserem Beispiel kann die Zufallsvariable nur einige wenige Werte annehmen. Die Augensumme kann nur ganzzahlig sein. Aber was ist mit der Zufallsvariable Tageshoechsttemperatur? Wenn wir nur genau genug messen, kann diese Zufallsvariable (fast) beliebige Werte annehmen."
 
 - Class: mult_question
-  Output: 'Ein weiteres Beispiel ist der exakte Winkel bei dem ein Gluecksrad zum stehen kommt. Welche Werte kann der Winkel (gemessen in Grad) annehmen?' 
+  Output: 'Ein weiteres Beispiel ist der exakte Winkel bei dem ein Gluecksrad zum Stehen kommt. Welche Werte kann der Winkel (gemessen in Grad) annehmen?' 
   AnswerChoices: "]0, 360];{90, 180};0 Grad Celsius"
   CorrectAnswer: "]0, 360]"
   AnswerTests: omnitest(correctVal=']0, 360]')
@@ -99,13 +99,13 @@
 
 - Class: mult_question
   Output: 'Um welche Art von Zufallsvariable handelt es sich also beim Winkel der Drehung eines Gluecksrades?' 
-  AnswerChoices: "diskrete Zufallsvariable;stetige Zufallsvariable;dikreditierte Zufallsvariable;steile Zufallsvariable;statische Zufallsvariable"
+  AnswerChoices: "diskrete Zufallsvariable;stetige Zufallsvariable;diskreditierte Zufallsvariable;steile Zufallsvariable;statische Zufallsvariable"
   CorrectAnswer: "stetige Zufallsvariable"
   AnswerTests: omnitest(correctVal="stetige Zufallsvariable")
   Hint: "Es gibt nur stetige und diskrete Zufallsvariablen. Die anderen Bezeichnungen sind frei erfunden."   
   
 - Class: mult_question
-  Output: 'Um welche Art von Zufallsvariable handelt es sich also beim der Anzahl von Arbeitsunfaellen, die in einem Betrieb innerhalb eines Monats ereignen?' 
+  Output: 'Um welche Art von Zufallsvariable handelt es sich also bei der Anzahl von Arbeitsunfaellen, die sich in einem Betrieb innerhalb eines Monats ereignen?' 
   AnswerChoices: "diskrete Zufallsvariable;stetige Zufallsvariable;dikreditierte Zufallsvariable;steile Zufallsvariable;statische Zufallsvariable"
   CorrectAnswer: "diskrete Zufallsvariable"
   AnswerTests: omnitest(correctVal="diskrete Zufallsvariable")
@@ -140,7 +140,7 @@
   Output: "Statt der Wahrscheinlichkeitsdichte an einer bestimmten Stelle der Verteilung interessiert uns meist ein Intervall, z.B. wie wahrscheinlich war es, hoechstens drei Treffer bei 10 Versuchen zu landen. Bei diskreten Verteilungen entspricht das der Summe der Wahrscheinlichkeiten der Ereignisse in diesem Intervall. Bei stetigen Verteilungen entspricht das der Flaeche unter der Verteilungskurve."
 
 - Class: text
-  Output: "Sie werden in diesem Kurs mehrere diskrete und stetige Wahrscheinlichkeitsverteilungen kennenlernen und dann jeweils die wahrscheinlichkeit bestimmter Intervalle bestimmen."
+  Output: "Sie werden in diesem Kurs mehrere diskrete und stetige Wahrscheinlichkeitsverteilungen kennenlernen und dann jeweils die Wahrscheinlichkeit bestimmter Intervalle bestimmen."
   
 - Class: text
   Output: "Fassen wir zusammen: Eine Zufallvariable ist eine Zuordnungsvorschrift, die jedem moeglichen Ergebnis eines Zufallsexperiments eine Groesse zuordnet. Zufallsvariablen koennen diskret oder stetig sein."
