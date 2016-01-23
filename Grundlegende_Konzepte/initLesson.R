@@ -1,8 +1,11 @@
 # swirl-Motivations-Nachrichten zu unterdrücken
 options(swirl_is_fun = FALSE)
 
+# Put initialization code in this file. The variables you create
+# here will show up in the user's workspace when he or she begins
+# the lesson.
+
 # activity tracker
-lesson_url <- paste("http://www.weibelzahl.de/swirl/Wahrscheinlichkeitstheorie/", lesson, ".html", sep="")
-if (url.exists(lesson_url)){
-	getURL(lesson_url)
-	}
+source(file.path(find.package("swirl"),
+                      "Courses/Wahrscheinlichkeitstheorie/ActivityTracker/activityTracker.R"), 
+					  local=TRUE)
