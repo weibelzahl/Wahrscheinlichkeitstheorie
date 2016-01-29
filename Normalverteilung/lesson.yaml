@@ -5,8 +5,7 @@
   Type: Standard
   Organization: PFH Private Hochschule Göttingen
   Version: 0.1
-  
-  
+
 # Begrüßung  
 - Class: text
   Output: "In diesem Kapitel lernen Sie die Normalverteilung kennen."
@@ -16,7 +15,7 @@
 
 # Formel  
 - Class: figure
-  Output: "Die Standardnormalverteilung wird auch die Gausssche Glockenkurve genannt. Sie ist nach Carl Friedrich Gauss benannt, obwohl er gar nicht der erste war, der diese Verteilung beschrieb. Aber im Jahr 1810 bewies er den zentralen Grenzwertsatz, welcher der Normalverteilung eine entscheidende Rolle in der Wahrscheinlichekeitstheorie und der Statistik gab, wie wir noch sehen werden. Gauss war uebrigens Professor und Sternwartendirektor in Goettingen."
+  Output: "Die Standardnormalverteilung wird auch die Gausssche Glockenkurve genannt. Sie ist nach Carl Friedrich Gauss benannt, obwohl er gar nicht der erste war, der diese Verteilung beschrieb. Aber im Jahr 1810 bewies er den zentralen Grenzwertsatz, welcher der Normalverteilung eine entscheidende Rolle in der Wahrscheinlichkeitstheorie und der Statistik gab, wie wir noch sehen werden. Gauss war uebrigens Professor und Sternwartendirektor in Goettingen."
   Figure: glockenkurve.R
   FigureType: new 
 
@@ -34,21 +33,21 @@
   FigureType: new 
 
 - Class: text
-  Output: "Normalverteilungen lassen sich mit der dargestellten Formel berechnen. Das sieht zunaechst sehr wild aus, ist aber kein Grund sich zu fuerchten. Wir werden die Bestandteile erklaeren."
+  Output: "Normalverteilungen lassen sich mit der dargestellten Funktionsgleichung berechnen. Das sieht zunaechst sehr wild aus, ist aber kein Grund sich zu fuerchten. Wir werden die Bestandteile erklaeren."
 
 - Class: mult_question
-  Output: 'In der Formel kommt zweimal der griechische Buchstabe sigma vor. Wofuer steht dieser Parameter?' 
+  Output: 'Die Bedeutung einiger Bestandteile der Funktionsgleichung koennen Sie bestimmt erraten: In der Gleichung kommt zweimal der griechische Buchstabe sigma vor. Wofuer steht dieser Parameter?' 
   AnswerChoices: 'die Varianz der Verteilung;die Standardabweichung der Verteilung;den Mittelwert der Verteilung'
   CorrectAnswer: 'die Standardabweichung der Verteilung'
   AnswerTests: omnitest(correctVal='die Standardabweichung der Verteilung')
   Hint: "Die Wurzel aus der Varianz ist die Standardabweichung. Sigma selbst steht also fuer die Standardabweichung." 
 
 - Class: mult_question
-  Output: 'In der Formel kommt ausserdem der griechische Buchstabe mue vor. Wofuer steht dieser Parameter?' 
+  Output: 'In der Funktionsgleichung kommt ausserdem der griechische Buchstabe mue vor. Wofuer steht dieser Parameter?' 
   AnswerChoices: 'die Varianz der Verteilung;die Standardabweichung der Verteilung;den Mittelwert der Verteilung'
   CorrectAnswer: 'den Mittelwert der Verteilung'
   AnswerTests: omnitest(correctVal='den Mittelwert der Verteilung')
-  Hint: "Der Buchstabe mue verweist in der Statstik immer auf den Mittelwert." 
+  Hint: "Der Buchstabe mue verweist in der Statistik immer auf den Mittelwert." 
   
 - Class: mult_question
   Output: 'Das Diagramm zeigt eine Standardnormalverteilung. Wo liegt das Maximum dieser Verteilung?' 
@@ -59,7 +58,7 @@
 
  #10
 - Class: figure
-  Output: "Die Standardnormalverteilung ist eine Normalverteiung mit dem Mittelwert 0 und einer Standardabweichung von 1. Die Formel vereinfacht sich dann wie dargestellt."
+  Output: "Die Standardnormalverteilung ist eine Normalverteilung mit dem Mittelwert 0 und einer Standardabweichung von 1. Die Funktionsgleichung vereinfacht sich dann wie dargestellt."
   Figure: standardnormalverteilungformel.R
   FigureType: new 
 
@@ -110,27 +109,32 @@
 
 #20  
 - Class: cmd_question
-  Output: "Die Standardnormalverteilung hat ihr Maximum an der Stelle 0. Berechnen Sie die Wahrscheinlichkeitsdichte der Standardnormalfunktion an der Stelle 0."
+  Output: "Die Standardnormalverteilung hat ihr Maximum an der Stelle 0. Berechnen Sie die Wahrscheinlichkeitsdichte der Standardnormalverteilung an der Stelle 0."
   CorrectAnswer: dnorm(0)
   AnswerTests: omnitest(correctVal=dnorm(0))
   Hint: "Der Befehl fuer die Dichte der Standardnormalverteilung lautet dnorm(x). Setzen Sie fuer x die Zahl 0 ein."
 
 - Class: text
-  Output: "Mit dem gleichen Befehl kann man aber auch die Funktionswerte aller anderen Normalverteilungen berechnen. Dazu uebergeben wird dem Befehl einfach zusaetliche Argumente fuer den gewuenschten Mittelwert und die gewuenschte Standardabweichung: dnorm(x, mean=0, sd=1)."
+  Output: "Mit dem gleichen Befehl kann man aber auch die Funktionswerte aller anderen Normalverteilungen berechnen. Dazu uebergeben wird dem Befehl einfach zwei zusaetzliche Argumente fuer den gewuenschten Mittelwert und die gewuenschte Standardabweichung: dnorm(x, mean=0, sd=1)."
    
 - Class: cmd_question
-  Output: "Berechnen Sie den Dichtewert eine Normalverteilung mit dem Mittelwert 1 und der Standardabweichung 2 an der Stelle 0."
+  Output: "Berechnen Sie den Dichtewert einer Normalverteilung mit dem Mittelwert 1 und der Standardabweichung 2 an der Stelle 0."
   CorrectAnswer: dnorm(0, mean=1, sd=2)
   AnswerTests: omnitest(correctVal=dnorm(0, mean=1, sd=2))
   Hint: "Der Befehl fuer die Dichte der Normalverteilung lautet dnorm(x, mean=0, sd=1). Setzen Sie fuer x die Zahl 0, fuer den Mittelwert 1 und fuer die Standardabweichung 2 ein."
 
 # noch eine Besonderheit: Flaeche = 1  
 - Class: text
-  Output: "Normalverteilungen haben noch eine Besonderheit: die Flaeche unter der Kurve betraegt 1. Etwas Formaler: das Integral der Funktion f(x) wie oben beschrieben von minus Unendlich bis Unendlich betraegt 1. "
+  Output: "Normalverteilungen haben noch eine Besonderheit: die Flaeche unter der Kurve betraegt 1. Etwas formaler: das Integral der Funktion f(x) wie oben beschrieben von minus Unendlich bis Unendlich betraegt 1. "
   
 # Verteilungsfunktion
 - Class: text
   Output: "Mit der Verteilungsfunktion wird genau dieses Intervall beschrieben. Die Verteilungsfunktion beschreibt also das Intervall von minus Unendlich bis x der Normalverteilung."
+
+- Class: figure
+  Output: "Die Verteilungsfunktion wird meist mit dem grossen griechischen Buchstaben Phi bezeichnet. In der Plotanzeige sehen Sie beispielhaft Phi von 1, dargestellt als die Flaeche unter der Standardnormalverteilung bis zum Wert x=1."
+  Figure: standardnormalverteilung_phi.R
+  FigureType: new 
   
 - Class: mult_question
   Output: 'Die Standardnormalverteilung ist glockenfoermig. Welche Form wird dann die Verteilungsfunktion der Standardnormalverteilung haben?' 
@@ -154,22 +158,22 @@
   Hint: "Die gesamte Flaeche unter der Kurve betraegt 1. Weil die Standardnormalverteilung symmetrisch ist, liegen 50% links und 50% rechts von x=0."
   
 - Class: cmd_question
-  Output: "Der Befehl fuer die Verteilungsfunktion lautet pnorm(q). Das p am Anfang des Befehls steht fuer probability. Das q steht fuer das Quantil. Der Befehl berechnet also die Wahrscheinlichekit des Quantils q in der Standardnormalverteilung. Ueberpruefen Sie Ihre Antwort indem Sie den Wert der Verteilungsfunktion an der Stelle q=0 berechnen."
+  Output: "Der Befehl fuer die Verteilungsfunktion lautet pnorm(q). Das p am Anfang des Befehls steht fuer probability. Das q steht fuer das Quantil. Der Befehl berechnet also die Wahrscheinlichekit des Quantils q in der Standardnormalverteilung. Ueberpruefen Sie Ihre Antwort auf die vorherige Frage, indem Sie den Wert der Verteilungsfunktion an der Stelle q=0 berechnen."
   CorrectAnswer: pnorm(0)
   AnswerTests: omnitest(correctVal=pnorm(0))
   Hint: "Der Befehl lautet pnorm(0)."
 
+#30
 # was ist qnorm(-1)
 - Class: cmd_question
-  Output: "Berechnen wir noch zwei weitere Werte der Verteilungsfunktion. Als erstes brauchen wir den Wert der Verteilungsfunktion an der Stelle x=-1. Weisen Sie das Ergebnis einer neuen Variable mit dem Namen unten zu."
+  Output: "Berechnen wir noch zwei weitere Werte der Verteilungsfunktion. Als erstes brauchen wir den Wert der Verteilungsfunktion an der Stelle x=-1. Weisen Sie das Ergebnis einer neuen Variable mit dem Namen 'unten' zu."
   CorrectAnswer: unten <- pnorm(-1)
   AnswerTests: any_of_exprs('unten <- pnorm(-1)', 'unten = pnorm(-1)')
   Hint: "Der Befehl lautet unten <- pnorm(-1)."
 
-#30
 # was ist qnorm(1)
 - Class: cmd_question
-  Output: "Als zweites brauchen wir noch den Wert der Verteilungsfunktion an der Stelle x=1. Weisen Sie das Ergebnis einer neuen Variable mit dem Namen oben zu."
+  Output: "Als zweites brauchen wir noch den Wert der Verteilungsfunktion an der Stelle x=1. Weisen Sie das Ergebnis einer neuen Variable mit dem Namen 'oben' zu."
   CorrectAnswer: oben <- pnorm(1)
   AnswerTests: any_of_exprs('oben <- pnorm(1)', 'oben = pnorm(1)')
   Hint: "Der Befehl lautet oben <- pnorm(1)."
@@ -192,24 +196,31 @@
   Output: "Berechnen Sie nun die Flaeche, die innerhalb von zwei Standardabweichungen des Mittelwertes liegt. Ziehen Sie dazu pnorm(-2) von pnorm(2) ab."
   CorrectAnswer: pnorm(2)-pnorm(-2)
   AnswerTests: omnitest(correctVal=pnorm(2)-pnorm(-2))
-  Hint: "pnorm(2) steht fuer die Wahrscheinlichkeit bis x=2. Davon müssen wir alles abziehen was links von x=-2 liegt also pnorm(-2). So ergibt sich pnorm(2)-pnorm(-2)."
+  Hint: "pnorm(2) steht fuer die Wahrscheinlichkeit bis x=2. Davon muessen wir alles abziehen, was links von x=-2 liegt, also pnorm(-2). So ergibt sich pnorm(2)-pnorm(-2)."
 
 # wie viel % liegen zwischen +-3 Standardabweichungen?
-- Class: text
-  Output: "Etwa 95% der Flaeche liegen innerhalb von nur zwei Standardabweichungen um den Mittlwert herum. Und etwa 99% der Flaeche liegen innerhalb von drei Standardabweichungen."
+- Class: figure
+  Output: "Etwa 95% der Flaeche liegen innerhalb von nur zwei Standardabweichungen um den Mittelwert herum. Und etwa 99% der Flaeche liegen innerhalb von drei Standardabweichungen."
+  Figure: standardnormalverteilung_95.R
+  FigureType: new 
   
 # 68-95-99 Regel  
 - Class: text
-  Output: "Diese drei Angaben braucht man immer mal wieder. Deswegen wurden sie zur sogenannten 68-95-99-Regel zusammengefasst: Etwa 68% der Flaeche liegen innerhalb von einer Standardabweichung um dne Mittelwert. Etwa 95% der Flaeche liegen innerhalb von nur zwei Standardabweichungen. Etwa 99% der Flaeche liegen innerhalb von drei Standardabweichungen."
+  Output: "Diese drei Angaben braucht man immer mal wieder. Deswegen wurden sie zur sogenannten 68-95-99-Regel zusammengefasst: Etwa 68% der Flaeche liegen innerhalb von einer Standardabweichung um den Mittelwert. Etwa 95% der Flaeche liegen innerhalb von nur zwei Standardabweichungen. Etwa 99% der Flaeche liegen innerhalb von drei Standardabweichungen."
   
 # Nutzen der Regel
 - Class: mult_question
-  Output: 'IQ-Werte sind normalverteil, haben einen Mittelwert von 100 und eine Standardabweichung von 15. Welche Schlussfolgerung kann man beispielsweise ziehen, wenn eine getestete Person den Testwert 130 erreicht?' 
+  Output: 'IQ-Werte sind normalverteilt, haben einen Mittelwert von 100 und eine Standardabweichung von 15. Welche Schlussfolgerung kann man beispielsweise ziehen, wenn eine getestete Person den Testwert 130 erreicht?' 
   AnswerChoices: 'nur 2,5 Prozent der Bevoelkerung haben einen noch hoeheren IQ-Wert;nur 2,5 Prozent der Bevoelkerung haben einen niedrigeren IQ-Wert;nur 5 Prozent der Bevoelkerung haben einen noch hoeheren IQ-Wert;nur 5 Prozent der Bevoelkerung haben einen niedrigeren IQ-Wert'
   CorrectAnswer: 'nur 2,5 Prozent der Bevoelkerung haben einen noch hoeheren IQ-Wert'
   AnswerTests: omnitest(correctVal='nur 2,5 Prozent der Bevoelkerung haben einen noch hoeheren IQ-Wert')
-  Hint: "130 liegt zwei Standardabweichungen oberhalb des Mittlwertes. 95% der Werte liegen innerhalb von zwei Standardabweichungen. Also liegen 5% ausserhalb von zwei Standardabweichungen. Die eine Haelfte am oberen Ende, die andere Haelfte am unteren Ende."
+  Hint: "130 liegt zwei Standardabweichungen oberhalb des Mittelwertes. 95% der Werte liegen innerhalb von zwei Standardabweichungen. Also liegen 5% ausserhalb von zwei Standardabweichungen. Die eine Haelfte am oberen Ende, die andere Haelfte am unteren Ende."
 
+- Class: figure
+  Output: "95% der Verteilung liegen zwischen -3 und 3. Die verbleibenden 5% teilen sich auf: 2,5% oberhalb von x=3 (rot schraffierte Flaeche) und 2,5% unterhalb von x=-3."
+  Figure: standardnormalverteilung_25.R
+  FigureType: new 
+  
 # 68-95-99 Regel  
 - Class: text
   Output: "Die 68-95-99-Regel kann also dabei helfen, eine schnelle Abschaetzung zu machen, wie ungewoehnlich ein Wert ist oder wie wahrscheinlich ein bestimmtes Ereignis ist."
