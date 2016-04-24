@@ -109,7 +109,8 @@
 - Class: figure
   Output: "Sie sollten jetzt ein Balkendiagramm sehen können, in dem die Wahrscheinlichkeiten aller möglichen Trefferanzahlen abgetragen sind."
   Figure: barplot.R
-
+  FigureType: new
+  
 - Class: text
   Output: "Es handelt sich um eine sogenannte Binomialverteilung für n=10 Versuche und eine Trefferwahrscheinlichkeit p=0.6. Die Binomialverteilung zeigt also die Wahrscheinlichkeit bei n Versuchen und einer Erfolgswahrscheinlichkeit von p eine bestimmt Anzahl von Treffern zu erzielen."
   

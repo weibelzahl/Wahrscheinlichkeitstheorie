@@ -93,6 +93,7 @@
 - Class: figure
   Output: "Als nächstes lernen Sie bedingte Wahrscheinlichkeiten kennen. Dazu wenden wir uns einem anderen Beispiel zu. In Ihrem Arbeitsbereich befindet sich nun ein Datensatz von Studierenden. Der Datensatz heißt entsprechend 'studierende'."
   Figure: studierende.R
+  FigureType: new
 
 - Class: cmd_question
   Output: "Zunächst wollen wir herausfinden, wie viele Studierende in diesem Datensatz verzeichnet sind. Der Befehl für die Anzahl der Zeilen lautet nrow(). Tippen Sie also einfach: 'nrow(studierende)'. Achten Sie unbedingt auf Groß- und Kleinschreibung, da in R die Schreibweisen unterschieden werden. "

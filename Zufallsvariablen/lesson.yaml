@@ -45,7 +45,8 @@
 - Class: figure
   Output: "Wir haben mal für Sie ausgerechnet, wie viele günstige Ergebnisse es für welche Augensumme gibt. Wie Sie aus dem Histogramm entnehmen können, gibt es zum Beispiel fünf Ergebnisse bei denen sich die Augensumme 6 ergibt: 1+5, 2+4, 3+3, 4+2 und 5+1."
   Figure: histogram.R
-  FigureType: new  
+  FigureType: new
+  
 
 - Class: cmd_question
   Output: "Mit dieser Vorgabe ist es jetzt recht einfach, die Wahrscheinlichkeit der Augensumme 6 zu berechnen. Wie hoch ist diese Wahrscheinlichkeit?"
@@ -56,6 +57,7 @@
 - Class: figure
   Output: "Sie sollten jetzt ein Balkendiagramm sehen können, in dem die Wahrscheinlichkeiten aller möglichen Augensummen abgetragen sind."
   Figure: barplot.R
+  FigureType: new
 
 - Class: cmd_question
   Output: "Ohne nachzurechnen: Wie groß ist die Summe aller dieser Wahrscheinlichkeiten?"
@@ -148,3 +150,4 @@
 # Zusammenfassung des Kapitels:
 - Class: text
   Output: "In diesem Kapitel haben Sie Zufallsvariablen kennen gelernt. In den folgenden Kapiteln, werden wir aus diesen verschiedene Wahrscheinlichkeitsverteilungen ableiten, die sich bei der Analyse von Stichproben als nützlich erwiesen haben."
+
