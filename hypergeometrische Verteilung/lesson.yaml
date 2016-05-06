@@ -1,0 +1,132 @@
+- Class: meta
+  Course: Wahrscheinlichkeitstheorie
+  Lesson: hypergeometrische Verteilung
+  Author: PFH
+  Type: Standard
+  Organization: PFH Private Hochschule Göttingen
+  Version: 0.1
+
+# Begrüßung  
+- Class: text
+  Output: "In diesem Kapitel lernen Sie die hypergeometrische Verteilung kennen."
+
+- Class: text
+  Output: "Wir beginnen am Besten gleich mit einer Aufgabe: Ein Unternehmen hat insgesamt N=50 Mitarbeiter. Davon sind 10 Frauen."
+
+- Class: cmd_question
+  Output: "Wie viele Männer arbeiten in dem Unternehmen?"
+  CorrectAnswer: 40
+  AnswerTests: omnitest(correctVal=40)
+  Hint: "50 Mitarbeiter insgesamt, davon 10 Frauen. Was kann man hier falsch machen? 40 Männer."
+  
+- Class: text
+  Output: "Für eine Befragung wollen Sie eine Stichprobe von n=20 Mitarbeitern ziehen. Für die Ergebnisse der Befragung ist es allerdings wichtig, dass mindestens 2 Frauen in der Stichprobe enthalten sind. Wie groß ist die Wahrscheinlichkeit dafür? Um diese Art der Fragestellung geht es in diesem Kapitel."
+
+- Class: mult_question
+  Output: 'Sie kennen bereits die Binomialverteilung. Bei der Binomialverteilung ging es darum die Wahrscheinlichkeit von k Treffern bei n Versuchen und einer Trefferwahrscheinlichkeit von p zu berechnen. Das scheint doch ganz brauchbar für unsere Fragestellung mit den Mitarbeitern. Wir haben die Anzahl der Versuche (n=20), die Anzahl der gewünschten Treffer (mindestens 2 Frauen) und die Trefferwahrscheinlichkeit (10/50). Warum darf man die Binomialverteilung hier trotzdem nicht verwenden?' 
+  AnswerChoices: 'die Trefferwahrscheinlichkeit ändert sich mit jedem Zug;die Größe der Population ändert sich mit jedem Zug;die Binomialverteilung gilt nur bei Fußballtreffern und ist nicht auf die Ziehung von Stichproben anwendbar;das untersuchte Merkmal ist nicht dichotom'
+  CorrectAnswer: 'die Trefferwahrscheinlichkeit ändert sich mit jedem Zug'
+  AnswerTests: omnitest(correctVal='die Trefferwahrscheinlichkeit ändert sich mit jedem Zug')
+  Hint: "Das Problem: zunächst ist die Trefferwahrscheinlichkeit tatsächlich 10/50. Wenn im ersten Zug eine Frau gezogen würde, ist die Trefferwahrscheinlichkeit im zweiten Zug nur noch 9/49." 
+
+- Class: text
+  Output: "Das untersuchte Merkmal ist dichotom: Männer vs. Frauen. Die Population bleibt natürlich auch immer gleich groß. Nur leider verändert sich die Trefferwahrscheinlichkeit ständig."
+
+# Trefferwahrscheinlichkeit im ersten Zug
+- Class: cmd_question
+  Output: "Wir können ja mal probeweise einige Trefferwahrscheinlichkeiten ausrechnen. Die Trefferwahrscheinlichkeit im ersten Zug hatten wir bereits berechnet. Wie groß ist die Wahrscheinlichkeit im ersten Zug aus allen Mitarbeitern zufällig eine Frau auszuwählen?"
+  CorrectAnswer: 10/50
+  AnswerTests: omnitest(correctVal=10/50)
+  Hint: "50 Mitarbeiter insgesamt, davon 10 Frauen. Sie erinnern sich sicher an die Laplace-Wahrscheinlichkeit: Anzahl der günstigen Ergebnisse geteilt durch die Anzahl möglicher Ergebnisse. Also 10/50=0.2"
+
+# erster Fall: Frau ausgewählt 
+- Class: cmd_question
+  Output: "Für den zweiten Zug müssen wir zwei Fälle unterscheiden. Nehmen wir an, im ersten Zug hätten wir eine Frau ausgewählt. Wie groß ist die (bedingte) Wahrscheinlichkeit im zweiten Zug aus allen verbleibenden Mitarbeitern zufällig wiederum eine Frau auszuwählen, wenn im ersten Zug bereits eine Frau ausgewählt wurde? Geben Sie das Ergebnis als Bruch an."
+  CorrectAnswer: 9/49
+  AnswerTests: omnitest(correctVal=9/49)
+  Hint: "Von den 50 Mitarbeitern insgesamt bleiben noch 49 übrig, wir ziehen schließlich ohne Zurücklegen. Davon sind noch 9 Frauen. Die Laplace-Wahrscheinlichkeit beträgt dann: Anzahl der günstigen Ergebnisse geteilt durch die Anzahl möglicher Ergebnisse. Also 9/49."
+
+# zweiter Fall: Mann ausgewählt 
+- Class: cmd_question
+  Output: "Die Trefferwahrscheinlichkeit ist also von 20% auf ungefähr 18,4% gesunken, nachdem wir eine Frau ausgewählt hatten. Nehmen wir an, im ersten Zug hätten wir einen Mann ausgewählt. Wie groß ist die (bedingte) Wahrscheinlichkeit im zweiten Zug aus allen verbleibenden Mitarbeitern zufällig wiederum eine Frau auszuwählen, wenn im ersten Zug ein Mann ausgewählt wurde? Geben Sie das Ergebnis wieder als Bruch an."
+  CorrectAnswer: 10/49
+  AnswerTests: omnitest(correctVal=10/49)
+  Hint: "Von den 50 Mitarbeitern insgesamt bleiben noch 49 übrig, wir ziehen schließlich ohne Zurücklegen. Davon sind noch 10 Frauen. Die Laplace-Wahrscheinlichkeit beträgt dann: Anzahl der günstigen Ergebnisse geteilt durch die Anzahl möglicher Ergebnisse. Also 10/49."
+  
+# Veränderung der Trefferwahrscheinlichkeit
+- Class: text
+  Output: "Die Trefferwahrscheinlichkeit im zweiten Fall ist also von 20% auf etwa 20,4% gestiegen. Auf Grund der relativ kleinen Population von 50 Mitarbeitern wirkt sich jeder Zug auf die Trefferwahrscheinlichkeit aus. In der Binomialverteilung hatten wir allerdings vorausgesetzt, dass die Trefferwahrscheinlichkeit immer gleich bleibt. Darum können wir unsere Aufgabe nicht mit der Binomialverteilung lösen. Wie können wir dann vorgehen?"
+
+- Class: text
+  Output: "Nun, wir könnten, ähnlich wie bei der Binomialverteilung, einen großen Wahrscheinlichkeitsbaum mit 20 Zügen nacheinander zeichnen, die Fälle heraussuchen, die genau zwei Frauen enthalten und deren Wahrscheinlichkeiten zusammen zählen."
+
+- Class: text
+  Output: "Dieses Vorgehen ist nicht nur etwas umständlich zu beschreiben, es ist auch umständlich. Zum Glück gibt es eine Berechnungsformel."
+
+# Formel  
+- Class: figure
+  Output: "In Ihrer Plotanzeige sollte jetzt die Formel für die hypergeometrische Verteilung zu sehen sein. Die Formel sieht wieder einmal erst recht unübersichtlich aus, die Bestandteile kennen Sie aber bereits."
+  Figure: formula.R
+  FigureType: new 
+
+- Class: mult_question
+  Output: 'N steht hier für ...' 
+  AnswerChoices: 'die Trefferwahrscheinlichkeit;die Größe der Population (Mitarbeiter gesamt);die Größe der Stichprobe;die Anzahl der Treffer;die Anzahl der interessierenden Merkmalsträger in der Population (Frauen)'
+  CorrectAnswer: 'die Größe der Population (Mitarbeiter gesamt)'
+  AnswerTests: omnitest(correctVal='die Größe der Population (Mitarbeiter gesamt)')
+  Hint: "N steht für die Population." 
+
+- Class: cmd_question
+  Output: "Wie groß ist in der Beispielaufgabe der Befragung im Unternehmen N?"
+  CorrectAnswer: 50
+  AnswerTests: omnitest(correctVal=50)
+  Hint: "Die Population ist in diesem Fall die Anzahl der Mitarbeiter insgesamt, also 50."
+  
+- Class: text
+  Output: "n steht für die zu ziehende Stichprobe (in der Binomialverteilung: die Anzahl der Versuche)"
+
+- Class: cmd_question
+  Output: "Wie groß ist in der Beispielaufgabe die zu ziehende Stichprobe?"
+  CorrectAnswer: 20
+  AnswerTests: omnitest(correctVal=20)
+  Hint: "Es sollen 20 Mitarbeiter befragt werden."
+  
+- Class: text
+  Output: "M steht für die Anzahl der Merkmalsträger"
+
+- Class: cmd_question
+  Output: "Wie groß ist in der Beispielaufgabe die Anzahl der Merkmalsträger?"
+  CorrectAnswer: 10
+  AnswerTests: omnitest(correctVal=10)
+  Hint: "Mit Merkmalsträger sind hier die Frauen gemeint. Im Unternehmen arbeiten 10 Frauen."
+  
+- Class: text
+  Output: "Bleibt noch y: Die Anzahl der Merkmalsträger in der zu ziehenden Stichprobe (in der Binomialverteilung haben wir das die Anzahl Treffer genannt)."
+
+- Class: cmd_question
+  Output: "Wie groß ist in der Beispielaufgabe die Anzahl der Merkmalsträger in der zu ziehenden Stichprobe?"
+  CorrectAnswer: 2
+  AnswerTests: omnitest(correctVal=2)
+  Hint: "In der Stichprobe sollen zwei Frauen enthalten sein."
+  
+- Class: text
+  Output: "Insgesamt liest sich die Formel nun also so: Die Wahrscheinlichkeit, dass in einer Stichprobe der Größe n aus einer Population N mit M Merkmalsträgern genau y Merkmalsträger enthalten sind berechnet sich aus dem Verhältnis mehrerer Auswahlen."
+
+- Class: text
+  Output: "Erstens, die Anzahl von Kombinationen, y Merkmalsträger aus den insgesamt M Merkmalsträgern auszuwählen (M über y)."
+
+- Class: text
+  Output: "Zweitens, die Anzahl von Kombinationen, n-y Nicht-Merkmalsträger aus den insgesamt N-M Nicht-Merkmalsträgern auszuwählen (N-M über n-y)."
+
+- Class: text
+  Output: "Drittens, die Anzahl von Kombinationen, n Personen aus den insgesamt N  Personen auszuwählen (N über n)."
+
+- Class: text
+  Output: "Wie immer in R, muss man sich diese Formel natürlich nicht merken, sondern es gibt einen Befehl, der genau diese Formel anwendet."
+  
+# hier gehst weiter  
+# ToDo: Formel ändern so dass konsistent mit dhyper
+  
+# Zusammenfassung des Kapitels:
+- Class: text
+  Output: "In diesem Kapitel haben Sie die hypergeometrische Verteilung kennengelernt. Diese Verteilung ist hilfreich, wenn ..."
