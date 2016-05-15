@@ -53,7 +53,7 @@
   Output: "Wie groß ist die Wahrscheinlichkeit, dass genau zwei Frauen in der Stichprobe enthalten sind? Um diese Art der Fragestellung geht es in diesem Kapitel."
   
 - Class: mult_question
-  Output: 'Sie kennen bereits die Binomialverteilung. Bei der Binomialverteilung ging es darum die Wahrscheinlichkeit von k Treffern bei n Versuchen und einer Trefferwahrscheinlichkeit von p zu berechnen. Das scheint doch ganz brauchbar für unsere Fragestellung mit den Mitarbeitern. Wir haben die Anzahl der Versuche (20), die Anzahl der gewünschten Treffer (zwei Frauen) und die Trefferwahrscheinlichkeit (10/50). Warum darf man die Binomialverteilung hier trotzdem nicht verwenden?' 
+  Output: 'Sie kennen bereits die Binomialverteilung. Bei der Binomialverteilung ging es darum, die Wahrscheinlichkeit von k Treffern bei n Versuchen und einer Trefferwahrscheinlichkeit von p zu berechnen. Das scheint doch ganz brauchbar für unsere Fragestellung mit den Mitarbeitern. Wir haben die Anzahl der Versuche (20), die Anzahl der gewünschten Treffer (zwei Frauen) und die Trefferwahrscheinlichkeit (10/50). Warum darf man die Binomialverteilung hier trotzdem nicht verwenden?' 
   AnswerChoices: 'die Trefferwahrscheinlichkeit ändert sich mit jedem Zug;die Größe der Population ändert sich mit jedem Zug;die Binomialverteilung gilt nur bei Fußballtreffern und ist nicht auf die Ziehung von Stichproben anwendbar;das untersuchte Merkmal ist nicht dichotom'
   CorrectAnswer: 'die Trefferwahrscheinlichkeit ändert sich mit jedem Zug'
   AnswerTests: omnitest(correctVal='die Trefferwahrscheinlichkeit ändert sich mit jedem Zug')
@@ -71,14 +71,14 @@
 
 # erster Fall: Frau ausgewählt 
 - Class: cmd_question
-  Output: "Für den zweiten Zug müssen wir zwei Fälle unterscheiden. Nehmen wir an, im ersten Zug hätten wir eine Frau ausgewählt. Wie groß ist die (bedingte) Wahrscheinlichkeit im zweiten Zug aus allen verbleibenden Mitarbeitern zufällig wiederum eine Frau auszuwählen, wenn im ersten Zug bereits eine Frau ausgewählt wurde? Geben Sie das Ergebnis als Bruch an."
+  Output: "Für den zweiten Zug müssen wir zwei Fälle unterscheiden. Nehmen wir an, im ersten Zug hätten wir eine Frau ausgewählt. Wie groß ist die (bedingte) Wahrscheinlichkeit, im zweiten Zug aus allen verbleibenden Mitarbeitern zufällig wiederum eine Frau auszuwählen, wenn im ersten Zug bereits eine Frau ausgewählt wurde? Geben Sie das Ergebnis als Bruch an."
   CorrectAnswer: 9/49
   AnswerTests: omnitest(correctVal=9/49)
   Hint: "Von den 50 Mitarbeitern insgesamt bleiben noch 49 übrig, wir ziehen schließlich ohne Zurücklegen. Davon sind noch 9 Frauen. Die Laplace-Wahrscheinlichkeit beträgt dann: Anzahl der günstigen Ergebnisse geteilt durch die Anzahl möglicher Ergebnisse. Also 9/49."
 
 # zweiter Fall: Mann ausgewählt 
 - Class: cmd_question
-  Output: "Die Trefferwahrscheinlichkeit ist also von 20% auf ungefähr 18,4% gesunken, nachdem wir eine Frau ausgewählt hatten. Nehmen wir an, im ersten Zug hätten wir einen Mann ausgewählt. Wie groß ist die (bedingte) Wahrscheinlichkeit im zweiten Zug aus allen verbleibenden Mitarbeitern zufällig wiederum eine Frau auszuwählen, wenn im ersten Zug ein Mann ausgewählt wurde? Geben Sie das Ergebnis wieder als Bruch an."
+  Output: "Die Trefferwahrscheinlichkeit ist also von 20% auf ungefähr 18,4% gesunken, nachdem wir eine Frau ausgewählt hatten. Nehmen wir an, im ersten Zug hätten wir stattdessen einen Mann ausgewählt. Wie groß ist die (bedingte) Wahrscheinlichkeit, im zweiten Zug aus allen verbleibenden Mitarbeitern zufällig wiederum eine Frau auszuwählen, wenn im ersten Zug ein Mann ausgewählt wurde? Geben Sie das Ergebnis wieder als Bruch an."
   CorrectAnswer: 10/49
   AnswerTests: omnitest(correctVal=10/49)
   Hint: "Von den 50 Mitarbeitern insgesamt bleiben noch 49 übrig, wir ziehen schließlich ohne Zurücklegen. Davon sind noch 10 Frauen. Die Laplace-Wahrscheinlichkeit beträgt dann: Anzahl der günstigen Ergebnisse geteilt durch die Anzahl möglicher Ergebnisse. Also 10/49."
@@ -88,7 +88,7 @@
   Output: "Die Trefferwahrscheinlichkeit im zweiten Fall ist also von 20% auf etwa 20,4% gestiegen. Auf Grund der relativ kleinen Population von 50 Mitarbeitern wirkt sich jeder Zug auf die Trefferwahrscheinlichkeit aus. In der Binomialverteilung hatten wir allerdings vorausgesetzt, dass die Trefferwahrscheinlichkeit immer gleich bleibt. Darum können wir unsere Aufgabe nicht mit der Binomialverteilung lösen. Wie können wir dann vorgehen?"
 
 - Class: text
-  Output: "Nun, wir könnten, ähnlich wie bei der Binomialverteilung, einen großen Wahrscheinlichkeitsbaum mit 20 Zügen nacheinander zeichnen, dann die Fälle heraussuchen, die genau zwei Frauen enthalten und deren Wahrscheinlichkeiten zusammen zählen."
+  Output: "Nun, wir könnten, ähnlich wie bei der Binomialverteilung, einen großen Wahrscheinlichkeitsbaum mit 20 Zügen nacheinander zeichnen, dann die Fälle heraussuchen, die genau zwei Frauen enthalten und deren Wahrscheinlichkeiten zusammenzählen."
 
 - Class: text
   Output: "Dieses Vorgehen ist nicht nur etwas umständlich zu beschreiben, es ist auch umständlich in der Durchführung. Zum Glück gibt es eine Berechnungsformel, die die Sache vereinfacht."
@@ -240,10 +240,10 @@
   Output: "Wann kommt nun die hypergeometrische Verteilung zum Einsatz und wann die Binomialverteilung? Die Binomialverteilung nimmt an, dass die Trefferwahrscheinlichkeit konstant bleibt. Das ist z. B. bei mehreren Rateversuchen in einem Test der Fall oder beim Ziehen mit Zurücklegen. Ist die Population sehr viel größer als die Stichprobe, wirkt sich die Veränderung der Trefferwahrscheinlichkeit kaum aus und man kann auch bei Stichproben ohne Zurücklegen die leichter handhabbare Binomialverteilung verwenden."
 
 - Class: text
-  Output: "Ist die Population allerdings kleiner als der 20-fache Stichprobenumfang (n/N>0,05) sollte die hypergeometrische Verteilung zum Einsatz kommen."
+  Output: "Ist die Population allerdings kleiner als der 20-fache Stichprobenumfang (n/N>0,05), sollte die hypergeometrische Verteilung zum Einsatz kommen."
 
 - Class: cmd_question
-  Output: "Das trifft beispielsweise beim Lotto zu. Für einen Sechser im Lotto, müssen genau die angekreuzten 6 Kugeln und keine der 49-6=43 Kugeln gezogen werden. Formal geschrieben: x=6 Kugeln die gezogen werden sollen; m=6 richtige Kugeln im Behälter (Merkmalsträger); n=43 Kugeln die nicht gezogen werden sollen (Nicht-Merkmalsträger); k=6 Kugeln werden gezogen (Stichprobe). Berechnen Sie die Wahrscheinlichkeit genau 6 rich tige zu haben."
+  Output: "Das trifft beispielsweise beim Lotto zu. Für einen Sechser im Lotto, müssen genau die angekreuzten 6 Kugeln und keine der 49-6=43 anderen Kugeln gezogen werden. Formal geschrieben: x=6 Kugeln die gezogen werden sollen; m=6 richtige Kugeln im Behälter (Merkmalsträger); n=43 Kugeln die nicht gezogen werden sollen (Nicht-Merkmalsträger); k=6 Kugeln werden gezogen (Stichprobe). Berechnen Sie die Wahrscheinlichkeit genau 6 Richtige zu haben."
   CorrectAnswer: dhyper(6, 6, 43, 6)
   AnswerTests: omnitest(correctVal=dhyper(6, 6, 43, 6))
   Hint: "Der Befehl lautet dhyper(x, m, n, k). Die Werte der Parameter sind in der Frage gegeben."
@@ -266,9 +266,9 @@
 
 - Class: cmd_question
   Output: "Berechnen Sie nun die Gegenwahrscheinlichkeit, also, die Wahrscheinlichkeit mehr als 31 Mitarbeiter die Interesse haben in der Stichprobe zu finden."
-  CorrectAnswer: 1-phyper(31, 500, 1500, 100)
-  AnswerTests: omnitest(correctVal=1-phyper(31, 500, 1500, 100))
-  Hint: "Für die Gegenwahrscheinlichkeit ziehen Sie die gegebene Wahrscheinlichkeit von 1 ab: 1-phyper(31, 500, 1500, 100)"
+  CorrectAnswer: 1-phyper(32, 500, 1500, 100)
+  AnswerTests: omnitest(correctVal=1-phyper(32, 500, 1500, 100))
+  Hint: "Für die Gegenwahrscheinlichkeit ziehen Sie die gegebene Wahrscheinlichkeit von 1 ab: 1-phyper(32, 500, 1500, 100)"
 
 - Class: text
   Output: "Da diese Wahrscheinlichkeit nur etwa 4% beträgt, können wir recht sicher sein, dass das Interesse in der Belegschaft größer sein wird, als die zu Grunde gelegten 25%."
