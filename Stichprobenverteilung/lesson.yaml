@@ -120,7 +120,7 @@
 
 - Class: figure
   Output: "In der Plotanzeige haben wir wieder zwei Histogramme gegenübergestellt: Links das Histogramm der neuen gleichverteilten Population, das Sie schon kennen. Rechts sehen Sie das Histogramm der Stichprobenmittelwerte."
-  Figure: compare_histograms.R
+  Figure: compare_histograms_uniform.R
   FigureType: new 
 
 - Class: figure
@@ -159,7 +159,7 @@
   FigureType: new 
 
 - Class: mult_question
-  Output: 'Die Standardabweichung der Stichprobenverteilung wird auch Standardfehler genannt. Wie im Diagramm dargestellt entspricht der Standardfehler (SE wie standard error) entspricht der Standardabweichung (sigma) geteilt durch die Wurzel der Stichprobengröße (n). Welche Aussage ist daher richtig?'
+  Output: 'Die Standardabweichung der Stichprobenverteilung wird auch Standardfehler genannt. Wie im Diagramm dargestellt entspricht der Standardfehler (SE wie standard error) der Standardabweichung (sigma) geteilt durch die Wurzel der Stichprobengröße (n). Welche Aussage ist daher richtig?'
   AnswerChoices: 'die Standardabweichung der Population ist immer größer als der Standardfehler;die Standardabweichung der Population ist immer kleiner als der Standardfehler'
   CorrectAnswer: 'die Standardabweichung der Population ist immer größer als der Standardfehler'
   AnswerTests: omnitest(correctVal='die Standardabweichung der Population ist immer größer als der Standardfehler')
@@ -218,7 +218,7 @@
   AnswerChoices: 'der Standardfehler des Medians ist etwas größer;der Standardfehler des Medians ist etwas kleiner;beide sind gleich'
   CorrectAnswer: 'der Standardfehler des Medians ist etwas größer'
   AnswerTests: omnitest(correctVal='der Standardfehler des Medians ist etwas größer')
-  Hint: "aus der Formel geht hervor, dass der Standardfehler zusätzlich mit der Wurzel aus pi halbe multipliziert wird. Die Wurzel aus pi halbe ist etwa 1,235." 
+  Hint: "Aus der Formel geht hervor, dass der Standardfehler zusätzlich mit der Wurzel aus pi halbe multipliziert wird. Die Wurzel aus pi halbe ist etwa 1,235." 
   
 # Zusammenfassung des Kapitels:
 - Class: text
