@@ -161,7 +161,7 @@
   
 - Class: mult_question
   Output: 'p steht also für die Erfolgswahrscheinlichkeit; k steht für die Anzahl der Treffer. Was bedeutet dann der Term p^k in der Formel?' 
-  AnswerChoices: "die Wahrscheinlichkeit von k Treffern bei k Versuchen;die Wahrscheinlichkeit von p Treffern bei k Versuchen;die Wahrscheinlichkeit von k Treffern bei p Versuchen"
+  AnswerChoices: "die Wahrscheinlichkeit von k Treffern;die Wahrscheinlichkeit von p Treffern;die Wahrscheinlichkeit von k Fehlversuchen"
   CorrectAnswer: "die Wahrscheinlichkeit von k Treffern"
   AnswerTests: omnitest(correctVal='die Wahrscheinlichkeit von k Treffern')
   Hint: "p steht für die Erfolgswahrscheinlichkeit bei jedem einzelnen Versuch. Das die Versuche unabhängig voneinander sind, werden die Wahrscheinlichkeiten miteinander multipliziert. Für k Treffer also p^k." 
