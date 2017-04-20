@@ -6,11 +6,6 @@ options(swirl_language = "german")
 # here will show up in the user's workspace when he or she begins
 # the lesson.
 
-# activity tracker
-source(file.path(find.package("swirl"),
-                      "Courses/Wahrscheinlichkeitstheorie/ActivityTracker/activityTracker.R"), 
-					  local=TRUE)
-
 find_course <- function(course){
   file.path(find.package("swirl"), "Courses", gsub(" ", "_", course))
 }

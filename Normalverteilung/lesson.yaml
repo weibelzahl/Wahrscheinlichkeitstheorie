@@ -51,9 +51,9 @@
   
 - Class: mult_question
   Output: 'Das Diagramm zeigt eine Standardnormalverteilung. Wo liegt das Maximum dieser Verteilung?' 
-  AnswerChoices: 0;1;-1
-  CorrectAnswer: '0'
-  AnswerTests: omnitest(correctVal='0')
+  AnswerChoices: x=0;x=1;x=-1
+  CorrectAnswer: x=0
+  AnswerTests: omnitest(correctVal='x=0')
   Hint: "Schätzen Sie den Wert nach dem Aussehen der Kurve." 
 
  #10
@@ -115,6 +115,9 @@
   Hint: "Der Befehl für die Dichte der Standardnormalverteilung lautet dnorm(x). Setzen Sie für x die Zahl 0 ein."
 
 - Class: text
+  Output: "Von Hand hätten wir auch rechnen können: (1/(sqrt(2*pi)))*2.71^(-0/2). Probieren Sie das mit dem Taschenrechner aus, wenn Sie es nicht glauben, es ergibt sich das gleiche Ergebnis."
+   
+- Class: text
   Output: "Mit dem gleichen Befehl kann man aber auch die Funktionswerte aller anderen Normalverteilungen berechnen. Dazu übergeben wird dem Befehl einfach zwei zusätzliche Argumente für den gewünschten Mittelwert und die gewünschte Standardabweichung: dnorm(x, mean=0, sd=1)."
    
 - Class: cmd_question
@@ -129,7 +132,7 @@
   
 # Verteilungsfunktion
 - Class: text
-  Output: "Mit der Verteilungsfunktion wird genau dieses Intervall beschrieben. Die Verteilungsfunktion beschreibt also das Intervall von minus Unendlich bis x der Normalverteilung."
+  Output: "Mit der Verteilungsfunktion wird genau dieses Intervall beschrieben. Die Verteilungsfunktion beschreibt also die Fläche unter der Kurve für das Intervall von minus Unendlich bis x der Normalverteilung."
 
 - Class: figure
   Output: "Die Verteilungsfunktion wird meist mit dem großen griechischen Buchstaben Phi bezeichnet. In der Plotanzeige sehen Sie beispielhaft Phi von 1, dargestellt als die Fläche unter der Standardnormalverteilung bis zum Wert x=1."
@@ -141,7 +144,7 @@
   AnswerChoices: 'erst geringer Anstieg, dann stärkerer Anstieg, dann wieder geringer Anstieg;gleichmäßiger Anstieg von minus Unendlich bis plus Unendlich;auch glockenförmig'
   CorrectAnswer: 'erst geringer Anstieg, dann stärkerer Anstieg, dann wieder geringer Anstieg'
   AnswerTests: omnitest(correctVal='erst geringer Anstieg, dann stärkerer Anstieg, dann wieder geringer Anstieg')
-  Hint: "Von links nach rechts kann das Integral nur größerer werden. Um den Punkt x=0 herum wächst es am meisten, hat also die größte Steigung."
+  Hint: "Von links nach rechts kann das Integral nur größerer werden. Um den Punkt x=0 herum wächst es am meisten, hat also die größte Steigung, weil die Ausgangsfunktion ihr Maximum erreicht."
 
 # Aussehen der Verteilungsfunktion
 - Class: figure
@@ -226,8 +229,14 @@
   Output: "Die 68-95-99-Regel kann also dabei helfen, eine schnelle Abschätzung zu machen, wie ungewöhnlich ein Wert ist oder wie wahrscheinlich ein bestimmtes Ereignis ist."
 
 # hier gehst weiter  
+- Class: mult_question
+  Output: 'Fassen wir zusammen. Die Standardnormalverteilung hat viele charakteristische Eigenschaften. Welche gehört NICHT dazu?' 
+  AnswerChoices: 'der Mittelwert beträgt 1;die Standardabweichung betraegt 1;sie ist glockenförmig;die Fläche unter der Kurve beträgt 1;68% der Verteilung liegen innerhalb von einer Standardabweichung um den Mittelwert'
+  CorrectAnswer: 'der Mittelwert beträgt 1'
+  AnswerTests: omnitest(correctVal='der Mittelwert beträgt 1')
+  Hint: "Der Mittelwert der Standardnormalverteilung beträgt 0. Die Verteilung liegt symmetrisch um 0."
 
   
 # Zusammenfassung des Kapitels:
 - Class: text
-  Output: "In diesem Kapitel haben Sie die Familie der Normalverteilungen kennengelernt. Die Standardnormalverteilung ist eine Normalverteilung mit Mittelwert 0 und Standardabweichung 1. Alle anderen Normalverteilungen lassen sich daraus ableiten. Die Normalverteilungen lassen sich mathematisch beschreiben. Viele Ereignisse und Messwerte sind zumindest annähernd normalverteilt. Warum das so ist, werden Sie im Kapitel Zentraler Grenzwertsatz sehen."
+  Output: "In diesem Kapitel haben Sie die Familie der Normalverteilungen kennengelernt. Die Standardnormalverteilung ist eine Normalverteilung mit Mittelwert 0 und Standardabweichung 1. Alle anderen Normalverteilungen lassen sich daraus ableiten. Die Normalverteilungen lassen sich mathematisch beschreiben. Viele Ereignisse und Messwerte sind zumindest annähernd normalverteilt. Warum das so ist, werden Sie im Kapitel Stichprobenverteilung sehen."
