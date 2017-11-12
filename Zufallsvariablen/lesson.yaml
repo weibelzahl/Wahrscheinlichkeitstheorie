@@ -123,7 +123,7 @@
   Hint: "Gehen Sie nach der altbekannten Formel vor: Anzahl der günstigen Ergebnisse geteilt durch die Anzahl der möglichen Ergebnisse. Es gibt ein günstiges Ergebnis (das erste Segment) und 360 mögliche Ergebnisse. Tippen Sie: 1/360"
 
 - Class: cmd_question
-  Output: "Wie groß ist die Wahrscheinlichkeit, dass das Gluücksrad im 91. Segment (also zwischen 90 und 91 Grad) zum Stehen kommt? (Geben Sie das Ergebnis als Bruch ein)"
+  Output: "Wie groß ist die Wahrscheinlichkeit, dass das Glücksrad im 91. Segment (also zwischen 90 und 91 Grad) zum Stehen kommt? (Geben Sie das Ergebnis als Bruch ein)"
   CorrectAnswer: 1/360
   AnswerTests: omnitest(correctVal=1/360)
   Hint: "Genauso wie bei der vorherigen Frage: Anzahl der günstigen Ergebnisse geteilt durch die Anzahl der möglichen Ergebnisse. Es gibt ein günstiges Ergebnis (das 91. Segment) und 360 mögliche Ergebnisse. Tippen Sie: 1/360"

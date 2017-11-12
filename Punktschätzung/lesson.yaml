@@ -1,0 +1,65 @@
+- Class: meta
+  Course: Wahrscheinlichkeitstheorie
+  Lesson: Punktschätzung
+  Author: PFH
+  Type: Standard
+  Organization: PFH Private Hochschule Göttingen
+  Version: 0.1
+  
+  
+# Begrüßung  
+- Class: text
+  Output: "In diesem Kapitel lernen Sie, wie man die bisher gelernten Konzepte der Wahrscheinlichkeitstheorie nutzen kann, um Parameter einer Population zu schätzen."
+
+- Class: text
+  Output: "Wir beginnen mit der Binomialverteilung. Sie erinnern sich?"
+
+# Binomialverteilung
+- Class: text
+  Output: "Beim Finale eines Fußballturniers kommt es zum Elfmeterschießen. Die Spieler des BVB schießen zehn Mal hintereinander auf das Tor von Manuel Neuer."
+
+- Class: cmd_question
+  Output: "Wissen Sie noch wie die Binomialverteilung funktioniert? Angenommen die Spieler haben bei jedem Elfmeter eine Chance von 80%, einen Treffer zu erzielen. Berechnen Sie die Wahrscheinlichkeit, dass die Mannschaft alle zehn Schüsse verwandelt?"
+  CorrectAnswer: dbinom(x = 10, size = 10, prob = 0.6)
+  AnswerTests: omnitest(correctVal=dbinom(x = 10, size = 10, prob = 0.8))
+  Hint: "Wie groß ist die Wahrscheinlichkeit, bei N=10 Versuchen und einer Erfolgswahrscheinlichkeit p=0.6 genau 10 Treffer zu erzielen. Entweder Sie berechen von Hand: 0.8^10. Oder Sie wenden den Befehl der Binomialverteilung an: dbinom(x = 10, size = 10, prob = 0.8)"
+
+- Class: figure
+  Output: "In Ihrer Plotanzeige sollten Sie jetzt ein Balkendiagramm sehen können, in dem die Wahrscheinlichkeiten aller möglichen Trefferanzahlen abgetragen sind. Auch dies kennen Sie bereits aus dem Kapitel zur Binomialverteilung."
+  Figure: barplot_BVB.R
+  FigureType: new
+
+# Drei Vereine
+- Class: text
+  Output: "Bei anderen Vereinen wäre die Trefferwahrscheinlichkeit möglicherweise eine andere. Wir nehmen hier (ohne empirische Belege) an, dass die Trefferwahrscheinlichkeit bei Hannover 96 p=60% und beim HSV p=20% betrage. Auch für diese Trefferwahrscheinlichkeiten können wir entsprechende Binomialverteilungen berechnen."
+
+- Class: figure
+  Output: "Die drei Binomialverteilungen sind nun in der Plotanzeige zu sehen. Ihr Lieblingsverein ist nicht dabei? Sie können das Beispiel im Anschluss auch gerne noch einmal mit anderen Clubs und anderen Trefferwahrscheinlichkeiten nachstellen."
+  Figure: barplot.R
+  FigureType: new
+
+- Class: mult_question
+  Output: "Betrachten Sie das Diagramm. Wie groß ist die Wahrscheinlichkeit, dass die Spieler des HSV bei 10 Schüssen genau 6 Treffer erzielen?"
+  AnswerChoices:  0,55%;25%;8,8%;0%
+  CorrectAnswer:  0,55%
+  AnswerTests: omnitest(correctVal="0,55%")
+  Hint: "Lesen Sie den Wert im Diagramm ab: die Höhe der roten Säule bei 6 Treffern."
+
+- Class: mult_question
+  Output: "Sie hören im Radio, dass ein Club bei 10 Elfmetern 6 Treffer erzielt hat. Auf welchen Verein würden Sie tippen?"
+  AnswerChoices:  Hannover 96;HSV;BVB
+  CorrectAnswer:  Hannover 96
+  AnswerTests: omnitest(correctVal="Hannover 96")
+  Hint: "Lesen Sie im Diagramm ab, welcher Verein die größte Wahrscheinlichkeit hatte, diese Trefferzahl zu erzielen."
+
+# ML
+- Class: text
+  Output: "Was wir hier ganz intuitiv angegeben haben, beschreibt bereits das Prinzip der Maximum-Likelihood Methode. Wir berechnen sozusagen rückwärts, welches Modell unsere Daten am besten erklären kann."
+
+
+
+
+
+# Zusammenfassung des Kapitels:
+- Class: text
+  Output: "In diesem Kapitel haben Sie  ... Sie haben dieses Kapitel nun erfolgreich abgeschlossen."
