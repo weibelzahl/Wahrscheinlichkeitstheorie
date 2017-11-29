@@ -34,16 +34,16 @@
   Output: "Wir könnten nun ableiten: die Trefferwahrscheinlichkeit, also die Wahrscheinlichkeit eines Arbeitsunfalls beträgt prob=0.5. Die sechs Wochen entsprechen size=6 Versuchen und es sind x=0 Arbeitsunfälle aufgetreten."
 
 - Class: cmd_question
-  Output: "Berechnen Sie die Wahrscheinlichkeit, bei sechs Versuchen und einer Trefferwahrscheinlichkeit von prob=0.5 keinen Erfolg zu erzielen."
+  Output: "Berechnen Sie mit Hilfe der Binomialverteilung die Wahrscheinlichkeit, bei sechs Versuchen und einer Trefferwahrscheinlichkeit von prob=0.5 keinen einzigen Erfolg zu erzielen."
   CorrectAnswer: dbinom(0, 6, 0.5)
   AnswerTests: omnitest(correctVal=dbinom(0, 6, 0.5))
   Hint: "Tippen Sie dbinom(x=0, size=6, prob=0.5)."
 
 - Class: text
-  Output: "Die Wahrscheinlichkeit beträgt etwa 1,5%. Doch halt! Der Einfachheit haben wir die Anzahl der Unfälle pro Woche berechnet. Aber wir hätten auch pro Tag rechnen können."
+  Output: "Die Wahrscheinlichkeit beträgt etwa 1,5%. Doch halt! Der Einfachheit halber haben wir die Anzahl der Unfälle pro Woche berechnet. Aber wir hätten auch pro Tag rechnen können."
   
 - Class: cmd_question
-  Output: "Bei 365 Arbeitstagen beträgt die Trefferwahrscheinlichkeit prob=26/365. Sechs Wochen entspricht 6*7=42 Versuchen. Berechnen Sie die Wahrscheinlichkeit, bei 42 Versuchen und einer Trefferwahrscheinlichkeit von prob=26/365 keinen Erfolg zu erzielen."
+  Output: "Bei 365 Arbeitstagen beträgt die Trefferwahrscheinlichkeit prob=26/365. Sechs Wochen entspricht 6*7=42 Versuchen. Berechnen Sie mit Hilfe der Binomialverteilung die Wahrscheinlichkeit, bei 42 Versuchen und einer Trefferwahrscheinlichkeit von prob=26/365 keinen Erfolg zu erzielen."
   CorrectAnswer: dbinom(0, 42, 26/365)
   AnswerTests: omnitest(correctVal=dbinom(0, 42, 26/365))
   Hint: "Tippen Sie dbinom(x=0, size=42, prob=26/365)."
@@ -84,10 +84,10 @@
   Output: "Das 'e' steht auch hier wieder für die Eulersche Zahl, also die Basis des natürlichen Logarithmus; e=2,718..."
 
 - Class: text
-  Output: "Das 'y' steht für die Anzahl der Treffer. Das Ausrufezeichen steht natürlich für Fakultät: z. B. 5! = 5 * 4 * 3 * 2 * 1 = 120."
+  Output: "Das 'x' steht für die Anzahl der Treffer. Das Ausrufezeichen steht natürlich für Fakultät: z. B. 5! = 5 * 4 * 3 * 2 * 1 = 120."
 
 - Class: text
-  Output: "Mit Hilfe dieser Formel könnten Sie nun ausrechen, wie groß die Wahrscheinlichkeit ist, in sechs Wochen y=0 Unfälle zu registrieren, wenn die durchschnittlich zu erwartende Häufigkeit in diesem Zeitraum lambda=6*0.5=3 Unfälle ist."
+  Output: "Mit Hilfe dieser Formel könnten Sie nun ausrechnen, wie groß die Wahrscheinlichkeit ist, in sechs Wochen y=0 Unfälle zu registrieren, wenn die durchschnittlich zu erwartende Häufigkeit in diesem Zeitraum lambda=6*0.5=3 Unfälle ist."
 
 - Class: mult_question
   Output: 'Natürlich muss man in R nicht jedes Mal diese Formel eingeben, sondern es gibt einen Befehl. Was vermuten Sie, wie lautet dieser Befehl wohl?' 
@@ -103,7 +103,7 @@
   Hint: "Tippen Sie dpois(x=0, lambda=3)."
 
 - Class: text
-  Output: "Die Wahrscheinlichkeit beträgt weniger als 5%. Es scheint als nicht sinnvoll anzunehmen, dass das Training keinerlei Auswirkungen hatte, sonst wäre vermutlich mindesten ein Unfall passiert."
+  Output: "Die Wahrscheinlichkeit beträgt weniger als 5%. Es scheint also nicht sinnvoll anzunehmen, dass das Training keinerlei Auswirkungen hatte, sonst wäre vermutlich mindesten ein Unfall passiert."
 
 - Class: cmd_question
   Output: "Was wäre die Wahrscheinlichkeit gewesen, dass in dem Zeitraum von sechs Wochen statt der erwarteten lambda=3 Unfälle höchstens ein Unfall passiert? Dafür benötigen wir die Verteilungsfunktion ppois(q, lambda). Diese berechnet die Summe der Wahrscheinlichkeiten für 0<=x<=q, also P(X<=q). Berechnen Sie die Wahrscheinlichkeit, dass höchsten ein Unfall passiert wäre."
@@ -139,14 +139,14 @@
 - Class: cmd_question
   Output: "Mit 0,8% ist diese Wahrscheinlichkeit sehr klein. Von Interesse ist aber eigentlich die Wahrscheinlichkeit von 30 oder mehr Fehlern. Dafür berechnen wir zunächst die Wahrscheinlichkeit von weniger (!) als 30 Fehlern in der Hausarbeit."
   CorrectAnswer: ppois(29, 20)
-  AnswerTests: omnitest(correctVal=ppois(x=29, lambda=20))
-  Hint: "Weniger als 30 Fehler bedeutet höchstens 29 Fehler. Damit können wir die Verteilungsfunktion anwenden. Tippen Sie ppois(x=29, lambda=20)."
+  AnswerTests: omnitest(correctVal=ppois(q=29, lambda=20))
+  Hint: "Weniger als 30 Fehler bedeutet höchstens 29 Fehler. Damit können wir die Verteilungsfunktion anwenden. Tippen Sie ppois(q=29, lambda=20)."
 
 - Class: cmd_question
   Output: "Damit ist es nun leicht die Wahrscheinlichkeit von 30 oder mehr Fehlern zu berechnen. Besonders elegant geht das mit dem zusätzlichen Argument lower.tail=FALSE. Statt P(X<=q) wird dann die Gegenwahrscheinlichkeit 1-P(X<0q)=P(X>q) ausgegeben."
   CorrectAnswer: ppois(29, 20, lower.tail=FALSE)
-  AnswerTests: omnitest(correctVal=ppois(x=29, lambda=20, lower.tail=FALSE))
-  Hint: "Verwenden Sie den gleichen Befehl wie in der vorherigen Aufgabe nur mit dem zusätzlichen Argument 'lower.tail=FALSE'. Tippen Sie ppois(x=29, lambda=20, lower.tail=FALSE)."
+  AnswerTests: omnitest(correctVal=ppois(q=29, lambda=20, lower.tail=FALSE))
+  Hint: "Verwenden Sie den gleichen Befehl wie in der vorherigen Aufgabe nur mit dem zusätzlichen Argument 'lower.tail=FALSE'. Tippen Sie ppois(q=29, lambda=20, lower.tail=FALSE)."
   
 - Class: text
   Output: "Dass der Student die geforderte Kompetenz hat, aber dennoch 30 oder mehr Fehler macht ist also sehr klein."
