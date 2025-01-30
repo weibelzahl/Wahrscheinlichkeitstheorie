@@ -1,0 +1,125 @@
+- Class: meta
+  Course: Wahrscheinlichkeitstheorie
+  Lesson: Binomialverteilung
+  Author: Prof. Dr. Stephan Weibelzahl
+  Type: Standard
+  Version: 0.1
+
+# Einführung
+- Class: text
+  Output: |
+    Willkommen zur Einführung in die Wahrscheinlichkeitstheorie! In dieser Lektion erhalten Sie eine kurze Einführung in die Wahrscheinlichkeitstheorie und die Ziele des Kurses.
+
+- Class: text
+  Output: |
+    Lernziele:
+    - Verständnis von diskreten Wahrscheinlichkeitsverteilungen (binomial, hypergeometrisch).
+    - Anwendung der Wahrscheinlichkeitstheorie auf reale Fragestellungen.
+
+# Grundlagen
+- Class: text
+  Output: |
+    In dieser Lektion lernen Sie die Grundlagen der Wahrscheinlichkeitstheorie kennen, einschließlich Zufallsvariablen und deren Verwendung.
+
+- Class: text
+  Output: |
+    Zufallsvariablen:
+    Eine Zufallsvariable stellt eine messbare Abbildung eines Wahrscheinlichkeitsraums in einen Messraum dar.
+
+- Class: cmd_question
+  Output: "Berechnen Sie die Wahrscheinlichkeit für eine Zufallsvariable X, die gleich 5 ist, wenn P(X=5) = 0.1."
+  CorrectAnswer: 0.1
+  AnswerTests: omnitest(correctVal=0.1)
+  Hint: Die Wahrscheinlichkeit ist direkt gegeben.
+
+# Binomialverteilung
+- Class: text
+  Output: |
+    In dieser Lektion lernen Sie die Binomialverteilung kennen, einschließlich ihrer Herleitung und Berechnungen in R.
+
+- Class: text
+  Output: |
+    Herleitung:
+    Die Binomialverteilung beschreibt die Anzahl der Erfolge in einer festen Anzahl von unabhängigen Bernoulli-Experimenten mit gleicher Erfolgswahrscheinlichkeit.
+
+- Class: cmd_question
+  Output: "Berechnen Sie die Wahrscheinlichkeit für genau 6 Erfolge bei 20 Versuchen mit einer Erfolgswahrscheinlichkeit von 0.2."
+  CorrectAnswer: dbinom(6, size = 20, prob = 0.2)
+  AnswerTests: omnitest(correctVal=0.1090997)
+  Hint: Verwenden Sie die Funktion `dbinom()`.
+
+- Class: cmd_question
+  Output: "Berechnen Sie die kumulative Wahrscheinlichkeit für bis zu 6 Erfolge bei 20 Versuchen mit einer Erfolgswahrscheinlichkeit von 0.2."
+  CorrectAnswer: pbinom(6, size = 20, prob = 0.2)
+  AnswerTests: omnitest(correctVal=0.8906096)
+  Hint: Verwenden Sie die Funktion `pbinom()`.
+
+- Class: cmd_question
+  Output: "Berechnen Sie das Quantil für eine Wahrscheinlichkeit von 0.05 bei 20 Versuchen mit einer Erfolgswahrscheinlichkeit von 0.5."
+  CorrectAnswer: qbinom(0.05, size = 20, prob = 0.5)
+  AnswerTests: omnitest(correctVal=6)
+  Hint: Verwenden Sie die Funktion `qbinom()`.
+
+# Hypergeometrische Verteilung
+- Class: text
+  Output: |
+    In dieser Lektion lernen Sie die hypergeometrische Verteilung kennen, einschließlich ihrer Herleitung und Berechnungen in R.
+
+- Class: text
+  Output: |
+    Herleitung:
+    Die hypergeometrische Verteilung beschreibt die Anzahl der Erfolge in einer Stichprobe ohne Zurücklegen aus einer endlichen Population.
+
+- Class: cmd_question
+  Output: "Berechnen Sie die Wahrscheinlichkeit für genau 2 Erfolge bei einer Stichprobe von 20 aus einer Population von 50 mit 10 Erfolgen."
+  CorrectAnswer: dhyper(2, m = 10, n = 40, k = 20)
+  AnswerTests: omnitest(correctVal=0.3251)
+  Hint: Verwenden Sie die Funktion `dhyper()`.
+
+- Class: cmd_question
+  Output: "Berechnen Sie die kumulative Wahrscheinlichkeit für bis zu 2 Erfolge bei einer Stichprobe von 20 aus einer Population von 50 mit 10 Erfolgen."
+  CorrectAnswer: phyper(2, m = 10, n = 40, k = 20)
+  AnswerTests: omnitest(correctVal=0.6769)
+  Hint: Verwenden Sie die Funktion `phyper()`.
+
+# Vertiefung und Anwendung
+- Class: text
+  Output: |
+    In dieser Lektion vertiefen Sie Ihr Wissen über die Wahrscheinlichkeitstheorie und wenden es auf komplexere Aufgaben und Fallstudien an.
+
+- Class: text
+  Output: |
+    Kombinationen:
+    Einführung in Kombinationen und deren Berechnung.
+
+- Class: cmd_question
+  Output: "Berechnen Sie die Anzahl der Kombinationen, um 2 Elemente aus einer Menge von 5 zu ziehen."
+  CorrectAnswer: choose(5, 2)
+  AnswerTests: omnitest(correctVal=10)
+  Hint: Verwenden Sie die Funktion `choose()`.
+
+- Class: text
+  Output: |
+    Fallstudien:
+    Analyse von IQ-Tests oder Studien zur Entscheidungsfindung bei Kindern.
+
+# Zusammenfassung und Abschluss
+- Class: text
+  Output: |
+    In dieser Lektion fassen wir die wichtigsten Punkte zusammen und überprüfen Ihr Verständnis mit einem Abschlussquiz.
+
+- Class: text
+  Output: |
+    Zusammenfassung der wichtigsten Punkte:
+    - Wiederholung der wichtigsten Konzepte und Formeln.
+
+- Class: cmd_question
+  Output: "Was ist die Wahrscheinlichkeit für genau 3 Erfolge bei 10 Versuchen mit einer Erfolgswahrscheinlichkeit von 0.5?"
+  CorrectAnswer: dbinom(3, size = 10, prob = 0.5)
+  AnswerTests: omnitest(correctVal=0.1171875)
+  Hint: Verwenden Sie die Funktion `dbinom()`.
+
+- Class: text
+  Output: |
+    Feedback und weiterführende Ressourcen:
+    Möglichkeit für die Teilnehmer, Feedback zu geben, und Hinweise auf weiterführende Literatur und Ressourcen.
